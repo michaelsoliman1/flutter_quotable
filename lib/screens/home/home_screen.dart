@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../models/qoute.dart';
-import '../favorites/favorites_screen.dart';
 import '../qoutes/qoutes_screen.dart';
+import '../saved_qoutes/saved_qoutes_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         index: _currentIndex,
         children: [
           QoutesScreen(),
-          FavoritesScreen(),
+          SavedQoutesScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -39,8 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Qoutes',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.favorite_outline),
-            label: 'Favorites',
+            icon: const Icon(Icons.bookmark_added_outlined),
+            label: 'Saved',
           ),
         ],
       ),

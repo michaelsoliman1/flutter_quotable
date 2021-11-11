@@ -17,6 +17,7 @@ class QoutesApp extends StatelessWidget {
     return MaterialApp(
       title: "Programming Qoutes",
       theme: AppTheme.lightTheme,
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
   }
