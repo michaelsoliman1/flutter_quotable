@@ -8,7 +8,7 @@ const baseUrl = "https://api.quotable.io";
 
 Future<List<Qoute>> fetchQoutes() async {
   final http.Response response = await http.get(
-    Uri.parse("$baseUrl/quotes?limit=50"),
+    Uri.parse("$baseUrl/quotes"),
   );
 
   if (response.statusCode == 200) {

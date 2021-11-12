@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/constants.dart';
+import '../../../shared/constants/constants.dart';
 import '../../../core/services/storage/local_storage.dart';
 import '../../../models/qoute.dart';
 
@@ -27,7 +27,7 @@ class _QouteItemState extends State<QouteItem> {
       });
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Qoutes Saved Successfully"),
+          content: Text("Qoute Saved Successfully"),
         ),
       );
     } catch (e) {

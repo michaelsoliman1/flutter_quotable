@@ -13,6 +13,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
+  final _screens = [
+    QoutesScreen(),
+    SavedQoutesScreen(),
+  ];
+
   void _changeScreen(int index) {
     setState(() {
       _currentIndex = index;
@@ -22,13 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: [
-          QoutesScreen(),
-          SavedQoutesScreen(),
-        ],
-      ),
+      body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _changeScreen,

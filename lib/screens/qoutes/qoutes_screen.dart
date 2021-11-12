@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/constants.dart';
 import '../../core/services/api/qoutes_api.dart';
 import '../../models/qoute.dart';
+import '../../shared/widgets/error_view_widget.dart';
+import '../../shared/widgets/loading_indicator_widget.dart';
 import 'components/qoute_item.dart';
 
 class QoutesScreen extends StatefulWidget {
@@ -15,6 +16,9 @@ class QoutesScreen extends StatefulWidget {
 class _QoutesScreenState extends State<QoutesScreen> {
   bool _isLoading = false;
   bool _isError = false;
+
+  // TODO implement
+  final _page = 0;
 
   final _qoutes = <Qoute>[];
 
@@ -48,43 +52,21 @@ class _QoutesScreenState extends State<QoutesScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("Qoutes")),
       body: RefreshIndicator(
-        onRefresh: () async => _getQoutes(),
+        onRefresh: () async {
+          _qoutes.clear();
+          _getQoutes();
+        },
         child: _isLoading
-            ? center
+            ? LoadingIndicator()
             : _isError
-                ? errorWidget
-                : listView,
+                ? ErrorView(onButtonPress: () => _getQoutes())
+                : ListView.builder(
+                    itemCount: _qoutes.length,
+                    itemBuilder: (context, index) {
+                      return QouteItem(qoute: _qoutes[index]);
+                    },
+                  ),
       ),
     );
   }
-
-  Center get center => Center(child: CircularProgressIndicator.adaptive());
-
-  ListView get listView => ListView.builder(
-        itemCount: _qoutes.length,
-        itemBuilder: (context, index) {
-          return QouteItem(qoute: _qoutes[index]);
-        },
-      );
-
-  Container get errorWidget => Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: Image.asset(Constants.EMPTY_PAGE),
-            ),
-            Text(
-              "Oops! Something Went Wrong!",
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            TextButton(
-              onPressed: () {
-                _getQoutes();
-              },
-              child: Text("Refresh"),
-            ),
-          ],
-        ),
-      );
 }
