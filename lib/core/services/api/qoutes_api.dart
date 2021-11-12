@@ -26,6 +26,6 @@ Future<List<Qoute>> fetchQoutes() async {
     print("REQUEST FAILED : STATUS CODE ${response.statusCode}, ERROR: ${response.body}");
 
     // important for future listener to know when an error happens
-    return Future.error([]);
+    return Future.error(response.statusCode);
   }
 }
