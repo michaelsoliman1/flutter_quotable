@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qoutes/models/qoute.dart';
-import 'package:qoutes/shared/constants/constants.dart';
+
+import '../../../models/qoute.dart';
+import '../../../shared/constants/constants.dart';
 
 class SavedQouteItem extends StatefulWidget {
   const SavedQouteItem({Key? key, required this.qoute}) : super(key: key);
