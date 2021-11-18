@@ -28,23 +28,23 @@ class _QoutesScreenState extends State<QoutesScreen> {
     _getQoutes();
   }
 
-  void _getQoutes() {
-    setState(() {
-      _isLoading = true;
-    });
-    // TODO change to await
-    fetchQoutes().then((qoutes) {
-      _isError = false;
-      _qoutes.addAll(qoutes);
-    }).onError((error, stackTrace) {
+  void _getQoutes() async {
+    try {
+      setState(() {
+        _isLoading = true;
+      });
+      final qoutes = await fetchQoutes();
+      setState(() {
+        _isError = false;
+        _isLoading = false;
+        _qoutes.addAll(qoutes);
+      });
+    } catch (e) {
       setState(() {
         _isError = true;
-      });
-    }).whenComplete(() {
-      setState(() {
         _isLoading = false;
       });
-    });
+    }
   }
 
   @override
