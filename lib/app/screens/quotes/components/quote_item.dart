@@ -1,44 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../controllers/quotes_controller.dart';
+import '../../../models/quote.dart';
 import '../../../shared/constants/constants.dart';
-import '../../../core/services/storage/local_storage.dart';
-import '../../../models/qoute.dart';
 
-class QouteItem extends StatefulWidget {
-  const QouteItem({
+class QuoteItem extends StatefulWidget {
+  const QuoteItem({
     Key? key,
     required this.qoute,
   }) : super(key: key);
 
-  final Qoute qoute;
+  final Quote qoute;
 
   @override
-  _QouteItemState createState() => _QouteItemState();
+  _QuoteItemState createState() => _QuoteItemState();
 }
 
-class _QouteItemState extends State<QouteItem> {
-  bool _isAdded = false;
-
-  Future<void> _saveQoute() async {
-    try {
-      await Storage.saveQouteToStorage(widget.qoute);
-      setState(() {
-        _isAdded = true;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("Qoute Saved Successfully"),
-        ),
-      );
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.toString()),
-        ),
-      );
-    }
-  }
-
+class _QuoteItemState extends State<QuoteItem> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -77,11 +56,21 @@ class _QouteItemState extends State<QouteItem> {
             right: 10,
             child: InkWell(
               onTap: () {
-                _saveQoute();
+                context.read<QuotesController>().saveQoute(
+                      context: context,
+                      qoute: widget.qoute,
+                    );
               },
               borderRadius: BorderRadius.circular(10),
               child: Icon(
-                _isAdded ? Icons.bookmark_add : Icons.bookmark_add_outlined,
+                // It would be definitly a better experience to show if the qoute is saved or not
+                // but that won't work for our example here, because this info is usually fetched with
+                // each quote (think of an attribute isFavorite in the Quote model) from the server
+                // If we have this feature, then we could've done something like the following,
+                //    qoute.isFavorite
+                //    ? Icons.bookmark_add
+                //    : Icons.bookmark_add_outlined
+                Icons.bookmark_add_outlined,
                 size: 30,
               ),
             ),

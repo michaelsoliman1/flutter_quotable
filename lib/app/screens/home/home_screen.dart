@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../qoutes/qoutes_screen.dart';
-import '../saved_qoutes/saved_qoutes_screen.dart';
+import '../../controllers/quotes_controller.dart';
+import '../favourite_quotes/favourite_quotes_screen.dart';
+import '../quotes/quotes_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,8 +17,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final _screens = [
     QoutesScreen(),
-    SavedQoutesScreen(),
+    FavouriteQuotesScreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    // old syntax
+    // return Provider.of<QoutesController>(context, listen: false).getQuotes();
+
+    context.read<QuotesController>().getQuotes();
+  }
 
   void _changeScreen(int index) {
     setState(() {
@@ -38,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.bookmark_added_outlined),
-            label: 'Saved',
+            label: 'Favourites',
           ),
         ],
       ),

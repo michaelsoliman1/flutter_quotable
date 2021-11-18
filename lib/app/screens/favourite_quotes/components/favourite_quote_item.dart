@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/qoute.dart';
+import '../../../models/quote.dart';
 import '../../../shared/constants/constants.dart';
 
-class SavedQouteItem extends StatefulWidget {
-  const SavedQouteItem({Key? key, required this.qoute}) : super(key: key);
+class FavouriteQuoteItem extends StatefulWidget {
+  const FavouriteQuoteItem({Key? key, required this.qoute}) : super(key: key);
 
-  final Qoute qoute;
+  final Quote qoute;
 
   @override
-  _SavedQouteItemState createState() => _SavedQouteItemState();
+  _FavouriteQuoteItemState createState() => _FavouriteQuoteItemState();
 }
 
-class _SavedQouteItemState extends State<SavedQouteItem> {
+class _FavouriteQuoteItemState extends State<FavouriteQuoteItem> {
   @override
   Widget build(BuildContext context) {
     return Card(

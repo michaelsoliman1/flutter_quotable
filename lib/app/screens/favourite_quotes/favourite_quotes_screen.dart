@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../core/services/storage/local_storage.dart';
-import '../../models/qoute.dart';
+import '../../../core/services/storage/local_storage.dart';
+import '../../models/quote.dart';
 import '../../shared/widgets/error_view_widget.dart';
 import '../../shared/widgets/loading_indicator_widget.dart';
-import 'components/saved_qoute_item.dart';
+import 'components/favourite_quote_item.dart';
 
-class SavedQoutesScreen extends StatefulWidget {
-  const SavedQoutesScreen({Key? key}) : super(key: key);
+class FavouriteQuotesScreen extends StatefulWidget {
+  const FavouriteQuotesScreen({Key? key}) : super(key: key);
 
   @override
-  _SavedQoutesScreenState createState() => _SavedQoutesScreenState();
+  _FavouriteQuotesScreenState createState() => _FavouriteQuotesScreenState();
 }
 
-class _SavedQoutesScreenState extends State<SavedQoutesScreen> {
-  final _savedQoutes = <Qoute>[];
+class _FavouriteQuotesScreenState extends State<FavouriteQuotesScreen> {
+  final _savedQoutes = <Quote>[];
 
   bool _isLoading = false;
   bool _isError = false;
@@ -70,7 +70,7 @@ class _SavedQoutesScreenState extends State<SavedQoutesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Saved Qoutes"),
+        title: Text("Favourite Qoutes"),
       ),
       body: _isLoading
           ? LoadingIndicator()
@@ -81,7 +81,7 @@ class _SavedQoutesScreenState extends State<SavedQoutesScreen> {
                   : ListView.builder(
                       itemCount: _savedQoutes.length,
                       itemBuilder: (context, index) {
-                        return SavedQouteItem(qoute: _savedQoutes[index]);
+                        return FavouriteQuoteItem(qoute: _savedQoutes[index]);
                       },
                     ),
       floatingActionButton: Row(
@@ -107,7 +107,7 @@ class _SavedQoutesScreenState extends State<SavedQoutesScreen> {
 
   Widget get emptyView => Center(
         child: Text(
-          "Save a qoute to add it here",
+          "Favourite qoutes to show them here",
           style: TextStyle(fontSize: 20),
         ),
       );

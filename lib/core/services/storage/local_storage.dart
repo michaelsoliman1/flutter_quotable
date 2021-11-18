@@ -1,12 +1,12 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../models/qoute.dart';
-import '../../../shared/constants/constants.dart';
+import '../../../app/models/quote.dart';
+import '../../../app/shared/constants/constants.dart';
 
 class Storage {
   static final _savedQoutes = <String>[];
 
-  static Future<void> saveQouteToStorage(Qoute qoute) async {
+  static Future<void> saveQouteToStorage(Quote qoute) async {
     // if the qoute is already added return an error
     if (_savedQoutes.any((element) => element == qoute.id)) {
       return Future.error("Qoute Already Saved!");
@@ -27,11 +27,11 @@ class Storage {
     prefs.setStringList(Constants.QOUTES_KEY, qoutes);
   }
 
-  static Future<List<Qoute>> loadQoutesFromStorage() async {
+  static Future<List<Quote>> loadQoutesFromStorage() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var qoutes = prefs.getStringList(Constants.QOUTES_KEY);
     if (qoutes != null) {
-      return qoutes.map((qoute) => Qoute.fromJson(qoute)).toList();
+      return qoutes.map((qoute) => Quote.fromJson(qoute)).toList();
     }
     // there is no saved qoutes
     return Future.value([]);

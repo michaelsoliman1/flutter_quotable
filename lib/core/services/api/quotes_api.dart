@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'package:qoutes/models/qoute.dart';
+import '../../../app/models/quote.dart';
 
 const baseUrl = "https://api.quotable.io";
 
-Future<List<Qoute>> fetchQoutes() async {
+Future<List<Quote>> fetchQuotes() async {
   final http.Response response = await http.get(
     Uri.parse("$baseUrl/quotes"),
   );
@@ -20,7 +20,7 @@ Future<List<Qoute>> fetchQoutes() async {
     // the same thing. but when casting, you just tell the compiler more info to work with,
     // which is definetly better.
     final results = parsedBody['results'] as List;
-    final qoutes = results.map((qoute) => Qoute.fromMap(qoute)).toList();
+    final qoutes = results.map((qoute) => Quote.fromMap(qoute)).toList();
     return qoutes;
   } else {
     print("REQUEST FAILED : STATUS CODE ${response.statusCode}, ERROR: ${response.body}");
