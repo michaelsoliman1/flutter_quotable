@@ -28,7 +28,7 @@ class FavouriteQuoteItem extends StatelessWidget {
                 id: quote.id,
               );
         },
-        confirmDismiss: (direction) {
+        confirmDismiss: (_) {
           return showDialog<bool>(
             context: context,
             builder: (context) => AlertDialog(
@@ -45,7 +45,9 @@ class FavouriteQuoteItem extends StatelessWidget {
               ),
               actions: [
                 TextButton(
-                  onPressed: () => Navigator.of(context).pop(true),
+                  onPressed: () {
+                    Navigator.of(context).pop(true);
+                  },
                   child: Text(
                     "Yes, Delete!",
                     style: TextStyle(color: Theme.of(context).errorColor),

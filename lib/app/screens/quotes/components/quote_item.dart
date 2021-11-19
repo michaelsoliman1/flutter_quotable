@@ -5,7 +5,7 @@ import '../../../controllers/quotes_controller.dart';
 import '../../../models/quote.dart';
 import '../../../shared/constants/constants.dart';
 
-class QuoteItem extends StatefulWidget {
+class QuoteItem extends StatelessWidget {
   const QuoteItem({
     Key? key,
     required this.qoute,
@@ -13,11 +13,6 @@ class QuoteItem extends StatefulWidget {
 
   final Quote qoute;
 
-  @override
-  _QuoteItemState createState() => _QuoteItemState();
-}
-
-class _QuoteItemState extends State<QuoteItem> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -38,12 +33,12 @@ class _QuoteItemState extends State<QuoteItem> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.qoute.content,
+                        qoute.content,
                         style: Theme.of(context).textTheme.subtitle1,
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: Text(widget.qoute.author),
+                        child: Text(qoute.author),
                       ),
                     ],
                   ),
@@ -58,7 +53,7 @@ class _QuoteItemState extends State<QuoteItem> {
               onTap: () {
                 context.read<QuotesController>().addQuoteToFavourite(
                       context: context,
-                      quote: widget.qoute,
+                      quote: qoute,
                     );
               },
               borderRadius: BorderRadius.circular(10),

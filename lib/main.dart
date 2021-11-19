@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'app/controllers/quotes_controller.dart';
-import 'app/screens/home/home_screen.dart';
+import 'app/home_screen.dart';
 import 'core/theme/theme.dart';
 
 void main() async {
