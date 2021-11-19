@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // return Provider.of<QoutesController>(context, listen: false).getQuotes();
 
     context.read<QuotesController>().getQuotes();
+    context.read<QuotesController>().loadFavouriteQuotes();
   }
 
   void _changeScreen(int index) {

@@ -56,9 +56,9 @@ class _QuoteItemState extends State<QuoteItem> {
             right: 10,
             child: InkWell(
               onTap: () {
-                context.read<QuotesController>().saveQoute(
+                context.read<QuotesController>().addQuoteToFavourite(
                       context: context,
-                      qoute: widget.qoute,
+                      quote: widget.qoute,
                     );
               },
               borderRadius: BorderRadius.circular(10),
@@ -67,7 +67,7 @@ class _QuoteItemState extends State<QuoteItem> {
                 // but that won't work for our example here, because this info is usually fetched with
                 // each quote (think of an attribute isFavorite in the Quote model) from the server
                 // If we have this feature, then we could've done something like the following,
-                //    qoute.isFavorite
+                //    qoute.isFavourite
                 //    ? Icons.bookmark_add
                 //    : Icons.bookmark_add_outlined
                 Icons.bookmark_add_outlined,

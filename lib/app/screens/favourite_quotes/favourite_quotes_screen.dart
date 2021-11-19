@@ -1,70 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../../../core/services/storage/local_storage.dart';
-import '../../models/quote.dart';
+import '../../controllers/quotes_controller.dart';
 import '../../shared/widgets/error_view_widget.dart';
 import '../../shared/widgets/loading_indicator_widget.dart';
 import 'components/favourite_quote_item.dart';
 
-class FavouriteQuotesScreen extends StatefulWidget {
+class FavouriteQuotesScreen extends StatelessWidget {
   const FavouriteQuotesScreen({Key? key}) : super(key: key);
-
-  @override
-  _FavouriteQuotesScreenState createState() => _FavouriteQuotesScreenState();
-}
-
-class _FavouriteQuotesScreenState extends State<FavouriteQuotesScreen> {
-  final _savedQoutes = <Quote>[];
-
-  bool _isLoading = false;
-  bool _isError = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadSavedQoutes();
-  }
-
-  Future<void> _loadSavedQoutes() async {
-    try {
-      setState(() {
-        _isLoading = true;
-      });
-      _savedQoutes.clear();
-      final qoutes = await Storage.loadQoutesFromStorage();
-      setState(() {
-        _savedQoutes.addAll(qoutes);
-        _isLoading = false;
-        _isError = false;
-      });
-    } catch (e) {
-      print(e);
-      setState(() {
-        _isLoading = false;
-        _isError = true;
-      });
-    }
-  }
-
-  Future<void> _eraseAllQoutes() async {
-    try {
-      setState(() {
-        _isLoading = true;
-      });
-      await Storage.eraseAllQoutes();
-      setState(() {
-        _savedQoutes.clear();
-        _isLoading = false;
-        _isError = false;
-      });
-    } catch (e) {
-      print(e);
-      setState(() {
-        _isLoading = false;
-        _isError = true;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,35 +15,19 @@ class _FavouriteQuotesScreenState extends State<FavouriteQuotesScreen> {
       appBar: AppBar(
         title: Text("Favourite Qoutes"),
       ),
-      body: _isLoading
-          ? LoadingIndicator()
-          : _isError
-              ? ErrorView(onButtonPress: () => _loadSavedQoutes())
-              : _savedQoutes.isEmpty
-                  ? emptyView
-                  : ListView.builder(
-                      itemCount: _savedQoutes.length,
-                      itemBuilder: (context, index) {
-                        return FavouriteQuoteItem(qoute: _savedQoutes[index]);
-                      },
-                    ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              _loadSavedQoutes();
-            },
-            child: Icon(Icons.refresh),
-          ),
-          SizedBox(width: 5),
-          FloatingActionButton(
-            onPressed: () {
-              _eraseAllQoutes();
-            },
-            child: Icon(Icons.delete_forever_outlined),
-          ),
-        ],
+      body: Consumer<QuotesController>(
+        builder: (context, controller, _) => controller.isFavouritesLoading
+            ? LoadingIndicator()
+            : controller.isFavouritesError
+                ? ErrorIndicator(onButtonPress: controller.loadFavouriteQuotes)
+                : controller.favouriteQuotes.isEmpty
+                    ? emptyView
+                    : ListView.builder(
+                        itemCount: controller.favouriteQuotes.length,
+                        itemBuilder: (context, index) {
+                          return FavouriteQuoteItem(quote: controller.favouriteQuotes[index]);
+                        },
+                      ),
       ),
     );
   }

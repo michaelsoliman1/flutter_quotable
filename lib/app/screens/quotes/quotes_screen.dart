@@ -17,7 +17,7 @@ class QoutesScreen extends StatelessWidget {
           builder: (context, controller, _) => controller.isLoading
               ? LoadingIndicator()
               : controller.isError
-                  ? ErrorView(onButtonPress: context.read<QuotesController>().getQuotes)
+                  ? ErrorIndicator(onButtonPress: context.read<QuotesController>().getQuotes)
                   : ListView.builder(
                       itemCount: controller.quotes.length,
                       itemBuilder: (context, index) {
