@@ -1,20 +1,20 @@
 import 'dart:convert';
 
-class Qoute {
+class Quote {
   String id;
   String content;
   String author;
 
-  Qoute({
+  Quote({
     required this.id,
     required this.author,
     required this.content,
   });
 
-  factory Qoute.fromJson(String source) => Qoute.fromMap(json.decode(source));
+  factory Quote.fromJson(String source) => Quote.fromMap(json.decode(source));
 
-  factory Qoute.fromMap(Map<String, dynamic> map) {
-    return Qoute(
+  factory Quote.fromMap(Map<String, dynamic> map) {
+    return Quote(
       id: map['_id'],
       author: map['author'],
       content: map['content'],

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
 
-class ErrorView extends StatelessWidget {
-  const ErrorView({Key? key, this.onButtonPress}) : super(key: key);
+class ErrorIndicator extends StatelessWidget {
+  const ErrorIndicator({Key? key, this.onButtonPress}) : super(key: key);
 
   final VoidCallback? onButtonPress;
 

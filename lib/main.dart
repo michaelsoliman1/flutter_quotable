@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'app/controllers/quotes_controller.dart';
+import 'app/home_screen.dart';
 import 'core/theme/theme.dart';
-import 'screens/home/home_screen.dart';
 
 void main() async {
   runApp(QoutesApp());
@@ -16,7 +18,10 @@ class QoutesApp extends StatelessWidget {
       title: "Qoutes",
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: ChangeNotifierProvider(
+        create: (context) => QuotesController(),
+        child: HomeScreen(),
+      ),
     );
   }
 }
