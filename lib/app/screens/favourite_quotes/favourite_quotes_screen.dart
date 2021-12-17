@@ -11,30 +11,25 @@ class FavouriteQuotesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Favourite Qoutes"),
-      ),
-      body: Consumer<FavoriteQuotesController>(
-        builder: (context, controller, _) => controller.isFavouritesLoading
-            ? LoadingIndicator()
-            : controller.isFavouritesError
-                ? ErrorIndicator(onButtonPress: controller.loadFavouriteQuotes)
-                : controller.favouriteQuotes.isEmpty
-                    ? emptyView
-                    : ListView.builder(
-                        itemCount: controller.favouriteQuotes.length,
-                        itemBuilder: (context, index) {
-                          return FavouriteQuoteItem(quote: controller.favouriteQuotes[index]);
-                        },
-                      ),
-      ),
+    return Consumer<FavoriteQuotesController>(
+      builder: (context, controller, _) => controller.isFavouritesLoading
+          ? LoadingIndicator()
+          : controller.isFavouritesError
+              ? ErrorIndicator(onButtonPress: controller.loadFavouriteQuotes)
+              : controller.favouriteQuotes.isEmpty
+                  ? emptyView
+                  : ListView.builder(
+                      itemCount: controller.favouriteQuotes.length,
+                      itemBuilder: (context, index) {
+                        return FavouriteQuoteItem(quote: controller.favouriteQuotes[index]);
+                      },
+                    ),
     );
   }
 
   Widget get emptyView => Center(
         child: Text(
-          "Favourite qoutes to show them here",
+          "Favorite quotes to show them here",
           style: TextStyle(fontSize: 20),
         ),
       );

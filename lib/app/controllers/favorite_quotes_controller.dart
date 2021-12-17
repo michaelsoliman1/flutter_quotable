@@ -21,6 +21,7 @@ class FavoriteQuotesController extends ChangeNotifier {
       }
       await Storage.saveQuoteToStorage(quote);
       _favouriteQuotes.add(quote);
+      notifyListeners();
       UIHelper.showSnackBar(context, "Qoute Saved Successfully");
     } catch (error) {
       UIHelper.showSnackBar(context, error.toString());
