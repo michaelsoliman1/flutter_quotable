@@ -76,6 +76,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_provider_utilities:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: a834647edfda4abfd0463a232d710fb26fffd46e
+      url: "https://github.com/quantosapplications/flutter_provider_utilities.git"
+    source: git
+    version: "1.0.4"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -191,6 +200,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.1"
+  quiver:
+    dependency: transitive
+    description:
+      name: quiver
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1+1"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -280,6 +296,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.0"
+  tuple:
+    dependency: transitive
+    description:
+      name: tuple
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   typed_data:
     dependency: transitive
     description:

@@ -27,6 +27,9 @@ dependencies:
   http: ^0.13.3
   shared_preferences: ^2.0.7
   provider: ^6.0.1
+  flutter_provider_utilities:
+    git:
+      url: https://github.com/quantosapplications/flutter_provider_utilities.git
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../controllers/quotes_controller.dart';
+import '../../controllers/favorite_quotes_controller.dart';
 import '../../shared/widgets/error_view_widget.dart';
 import '../../shared/widgets/loading_indicator_widget.dart';
 import 'components/favourite_quote_item.dart';
@@ -15,7 +15,7 @@ class FavouriteQuotesScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Favourite Qoutes"),
       ),
-      body: Consumer<QuotesController>(
+      body: Consumer<FavoriteQuotesController>(
         builder: (context, controller, _) => controller.isFavouritesLoading
             ? LoadingIndicator()
             : controller.isFavouritesError

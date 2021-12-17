@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'controllers/favorite_quotes_controller.dart';
 import 'controllers/quotes_controller.dart';
 import 'screens/favourite_quotes/favourite_quotes_screen.dart';
 import 'screens/quotes/quotes_screen.dart';
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // return Provider.of<QoutesController>(context, listen: false).getQuotes();
 
     context.read<QuotesController>().getQuotes();
-    context.read<QuotesController>().loadFavouriteQuotes();
+    context.read<FavoriteQuotesController>().loadFavouriteQuotes();
   }
 
   void _changeScreen(int index) {

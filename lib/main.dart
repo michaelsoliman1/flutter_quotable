@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'app/controllers/favorite_quotes_controller.dart';
 import 'app/controllers/quotes_controller.dart';
 import 'app/home_screen.dart';
 import 'core/theme/theme.dart';
@@ -18,8 +19,11 @@ class QoutesApp extends StatelessWidget {
       title: "Qoutes",
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider(
-        create: (context) => QuotesController(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => QuotesController()),
+          ChangeNotifierProvider(create: (_) => FavoriteQuotesController()),
+        ],
         child: HomeScreen(),
       ),
     );
