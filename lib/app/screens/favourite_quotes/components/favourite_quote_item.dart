@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../controllers/quotes_controller.dart';
+import '../../../controllers/favorite_quotes_controller.dart';
 import '../../../models/quote.dart';
 import '../../../shared/constants/constants.dart';
 
@@ -23,7 +23,7 @@ class FavouriteQuoteItem extends StatelessWidget {
         dismissThresholds: {DismissDirection.endToStart: 0.7},
         direction: DismissDirection.endToStart,
         onDismissed: (direction) {
-          context.read<QuotesController>().removeQouteFromFavourite(
+          context.read<FavoriteQuotesController>().removeQouteFromFavourite(
                 context: context,
                 id: quote.id,
               );

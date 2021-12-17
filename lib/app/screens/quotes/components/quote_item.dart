@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../controllers/quotes_controller.dart';
+import '../../../controllers/favorite_quotes_controller.dart';
 import '../../../models/quote.dart';
 import '../../../shared/constants/constants.dart';
 
@@ -51,7 +51,7 @@ class QuoteItem extends StatelessWidget {
             right: 10,
             child: InkWell(
               onTap: () {
-                context.read<QuotesController>().addQuoteToFavourite(
+                context.read<FavoriteQuotesController>().addQuoteToFavourite(
                       context: context,
                       quote: qoute,
                     );
