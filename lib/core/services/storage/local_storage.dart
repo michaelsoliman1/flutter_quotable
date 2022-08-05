@@ -29,11 +29,11 @@ class Storage {
   static Future<List<Quote>> loadQuotesFromStorage() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      var qoutes = prefs.getStringList(Constants.QOUTES_KEY);
-      if (qoutes != null) {
-        return qoutes.map((qoute) => Quote.fromJson(qoute)).toList();
+      var quotes = prefs.getStringList(Constants.QOUTES_KEY);
+      if (quotes != null) {
+        return quotes.map((qoute) => Quote.fromJson(qoute)).toList();
       }
-      // there is no saved qoutes
+      // there is no saved quotes
       // return a future of an empty list.
       // we return a future because this is an asynchronous function
       return Future.value([]);

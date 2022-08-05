@@ -7,7 +7,6 @@ class AppTheme {
     colorScheme: _lightColorScheme,
     backgroundColor: _lightColorScheme.background,
     primaryColor: _lightColorScheme.primary,
-    accentColor: _lightColorScheme.secondary,
     appBarTheme: AppBarTheme(
       elevation: 1,
       centerTitle: true,
@@ -21,9 +20,9 @@ class AppTheme {
 
   static final _lightColorScheme = ColorScheme(
     primary: Color(0xFF00ACC1),
-    primaryVariant: Color(0xFF007E8F),
+    primaryContainer: Color(0xFF007E8F),
     secondary: Color(0xFF2003B42),
-    secondaryVariant: Color(0xFF1C545C),
+    secondaryContainer: Color(0xFF1C545C),
     surface: Color(0xFFFFFFFF),
     background: Color(0xFFFFFFFF),
     error: Color(0xFF751B0C),

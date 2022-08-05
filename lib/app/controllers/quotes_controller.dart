@@ -14,8 +14,8 @@ class QuotesController extends ChangeNotifier {
   Future<void> getQuotes() async {
     isLoading = true;
     try {
-      final qoutes = await fetchQuotes();
-      _quotes.addAll(qoutes);
+      final quotes = await fetchQuotes();
+      _quotes.addAll(quotes);
       isError = false;
     } catch (e) {
       isError = true;

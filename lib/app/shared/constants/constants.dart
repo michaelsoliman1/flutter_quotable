@@ -3,5 +3,5 @@ class Constants {
 
   static const EMPTY_PAGE = 'assets/images/empty-box.png';
 
-  static const QOUTES_KEY = 'qoutes';
+  static const QOUTES_KEY = 'quotes';
 }

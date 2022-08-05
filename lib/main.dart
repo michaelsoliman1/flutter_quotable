@@ -8,17 +8,17 @@ import 'app/navigation/app_router.dart';
 import 'core/theme/theme.dart';
 
 void main() {
-  runApp(const QoutesApp());
+  runApp(const QuotesApp());
 }
 
-class QoutesApp extends StatefulWidget {
-  const QoutesApp({Key? key}) : super(key: key);
+class QuotesApp extends StatefulWidget {
+  const QuotesApp({Key? key}) : super(key: key);
 
   @override
-  _QoutesAppState createState() => _QoutesAppState();
+  _QuotesAppState createState() => _QuotesAppState();
 }
 
-class _QoutesAppState extends State<QoutesApp> {
+class _QuotesAppState extends State<QuotesApp> {
   final _appStateController = AppStateController();
   final _quotesController = QuotesController();
   final _favoriteQuotesController = FavoriteQuotesController();

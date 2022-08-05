@@ -39,7 +39,6 @@ class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDe
       onPopPage: _handlePopPage,
       pages: [
         if (!appStateController.isInitialized) SplashScreen.page(),
-        // TODO add login
         if (appStateController.isInitialized) HomeScreen.page(appStateController.selectedTab),
       ],
     );
