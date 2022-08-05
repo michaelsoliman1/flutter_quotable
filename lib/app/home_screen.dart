@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     // old syntax
-    // return Provider.of<QoutesController>(context, listen: false).getQuotes();
+    // return Provider.of<QuotesController>(context, listen: false).getQuotes();
 
     context.read<QuotesController>().getQuotes();
     context.read<FavoriteQuotesController>().loadFavouriteQuotes();
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
             items: [
               BottomNavigationBarItem(
                 icon: const Icon(Icons.home_outlined),
-                label: 'Qoutes',
+                label: 'Quotes',
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.bookmark_added_outlined),

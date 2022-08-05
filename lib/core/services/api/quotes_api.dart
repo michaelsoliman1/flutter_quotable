@@ -20,8 +20,8 @@ Future<List<Quote>> fetchQuotes() async {
     // the same thing. but when casting, you just tell the compiler more info to work with,
     // which is definetly better.
     final results = parsedBody['results'] as List;
-    final qoutes = results.map((qoute) => Quote.fromMap(qoute)).toList();
-    return qoutes;
+    final quotes = results.map((qoute) => Quote.fromMap(qoute)).toList();
+    return quotes;
   } else {
     print("REQUEST FAILED : STATUS CODE ${response.statusCode}, ERROR: ${response.body}");
 

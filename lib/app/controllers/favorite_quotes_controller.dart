@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/services/storage/local_storage.dart';
@@ -42,8 +41,8 @@ class FavoriteQuotesController extends ChangeNotifier {
     try {
       isFavouritesLoading = true;
       _favouriteQuotes.clear();
-      final qoutes = await Storage.loadQuotesFromStorage();
-      _favouriteQuotes.addAll(qoutes);
+      final quotes = await Storage.loadQuotesFromStorage();
+      _favouriteQuotes.addAll(quotes);
       isFavouritesError = false;
     } catch (e) {
       print(e);
