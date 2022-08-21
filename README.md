@@ -13,14 +13,24 @@ The main points will be
 ## Refactor Roadmap
 
 - [ ] use [very_good_analysis](https://pub.dev/packages/very_good_analysis) for lints as a start
-- [ ] prepare the app to use layered architecture `(presentation/application/domain/data)`
-- [ ] generate (domain/data) packages (layers) with mason brick
+- [ ] setup melos (for managing packages)
+- [ ] refactor app with layered architecture `(presentation/application/domain/data)`
+
+  - [ ] domain layer (package)
+  - [ ] data layer (package)
+  - [ ] refactor ui to (presentation/application)
+
 - [ ] use go_router for routing
 
+## App Architecture
+
+```
+
+```
+
 <br>
 <br>
 
-<img src="assets/screenshots/quotes.png" alt="hierarchy_after" height="500">
-<img src="assets/screenshots/saved.png" alt="hierarchy_after" height="500">
+<img src="assets/screenshots/quotes.png" alt="hierarchy_after" height="500"><img src="assets/screenshots/saved.png" alt="hierarchy_after" height="500">
 
 <br>
