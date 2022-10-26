@@ -38,7 +38,7 @@ class AppStateController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void goToTab(index) {
+  void goToTab(int index) {
     _selectedTab = index;
     notifyListeners();
   }
