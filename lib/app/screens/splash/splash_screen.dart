@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/app_state_controller.dart';
-import '../../navigation/app_pages.dart';
+import '../../../router/app_pages.dart';
 
 class SplashScreen extends StatefulWidget {
   static MaterialPage page() {

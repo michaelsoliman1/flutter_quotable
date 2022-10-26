@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'controllers/app_state_controller.dart';
 import 'controllers/favorite_quotes_controller.dart';
 import 'controllers/quotes_controller.dart';
-import 'navigation/app_pages.dart';
+import '../router/app_pages.dart';
 import 'screens/favourite_quotes/favourite_quotes_screen.dart';
 import 'screens/quotes/quotes_screen.dart';
 

@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'app/controllers/app_state_controller.dart';
 import 'app/controllers/favorite_quotes_controller.dart';
 import 'app/controllers/quotes_controller.dart';
-import 'app/navigation/app_router.dart';
+import 'router/app_router.dart';
 import 'core/theme/theme.dart';
 
 void main() {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/quotes_controller.dart';
-import '../../navigation/app_pages.dart';
+import '../../../router/app_pages.dart';
 import '../../shared/widgets/error_view_widget.dart';
 import '../../shared/widgets/loading_indicator_widget.dart';
 import 'components/quote_item.dart';

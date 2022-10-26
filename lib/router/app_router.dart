@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../controllers/app_state_controller.dart';
-import '../controllers/favorite_quotes_controller.dart';
-import '../controllers/quotes_controller.dart';
-import '../home_screen.dart';
-import '../screens/splash/splash_screen.dart';
+import '../app/controllers/app_state_controller.dart';
+import '../app/controllers/favorite_quotes_controller.dart';
+import '../app/controllers/quotes_controller.dart';
+import '../app/home_screen.dart';
+import '../app/screens/splash/splash_screen.dart';
 
 class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDelegateMixin {
   @override
