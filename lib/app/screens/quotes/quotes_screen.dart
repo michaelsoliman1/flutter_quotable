@@ -1,39 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quotes/app/controllers/quotes_controller.dart';
+import 'package:quotes/app/screens/quotes/components/quote_item.dart';
+import 'package:quotes/app/shared/widgets/error_view_widget.dart';
+import 'package:quotes/app/shared/widgets/loading_indicator_widget.dart';
 
-import '../../controllers/quotes_controller.dart';
-import '../../../router/app_pages.dart';
-import '../../shared/widgets/error_view_widget.dart';
-import '../../shared/widgets/loading_indicator_widget.dart';
-import 'components/quote_item.dart';
-
-class QuotesScreen extends StatelessWidget {
-  static MaterialPage page() {
-    return MaterialPage(
-      name: AppPages.quotesPath,
-      key: ValueKey(AppPages.quotesPath),
-      child: const QuotesScreen(),
-    );
-  }
-
-  const QuotesScreen({Key? key}) : super(key: key);
+class QuotesScreen extends ConsumerWidget {
+  const QuotesScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final controller = ref.watch(quotesProvider);
     return RefreshIndicator(
-      onRefresh: () async => context.read<QuotesController>().refreshQuotes(),
-      child: Consumer<QuotesController>(
-        builder: (context, controller, _) => controller.isLoading
-            ? LoadingIndicator()
-            : controller.isError
-                ? ErrorIndicator(onButtonPress: context.read<QuotesController>().getQuotes)
-                : ListView.builder(
-                    itemCount: controller.quotes.length,
-                    itemBuilder: (context, index) {
-                      return QuoteItem(qoute: controller.quotes[index]);
-                    },
-                  ),
-      ),
+      onRefresh: controller.refreshQuotes,
+      child: controller.isLoading
+          ? const LoadingIndicator()
+          : controller.isError
+              ? ErrorIndicator(onTryAgainPressed: controller.getQuotes)
+              : ListView.builder(
+                  itemCount: controller.quotes.length,
+                  itemBuilder: (context, index) {
+                    return QuoteItem(qoute: controller.quotes[index]);
+                  },
+                ),
     );
   }
 }

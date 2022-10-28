@@ -1,56 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:quotes/app/screens/quotes/quotes_screen.dart';
+import 'package:quotes/app/screens/root/root_screen.dart';
+import 'package:quotes/router/app_paths.dart';
 
-import '../app/controllers/app_state_controller.dart';
-import '../app/controllers/favorite_quotes_controller.dart';
-import '../app/controllers/quotes_controller.dart';
-import '../app/home_screen.dart';
-import '../app/screens/splash/splash_screen.dart';
+final routerProvider = Provider((ref) => AppRouter());
 
-class AppRouter extends RouterDelegate with ChangeNotifier, PopNavigatorRouterDelegateMixin {
-  @override
-  final GlobalKey<NavigatorState> navigatorKey;
+class AppRouter {
+  GoRouter get config => _router;
 
-  final AppStateController appStateController;
-  final QuotesController quotesController;
-  final FavoriteQuotesController favoriteQuotesController;
-
-  AppRouter({
-    required this.appStateController,
-    required this.quotesController,
-    required this.favoriteQuotesController,
-  }) : navigatorKey = GlobalKey<NavigatorState>() {
-    appStateController.addListener(notifyListeners);
-    quotesController.addListener(notifyListeners);
-    favoriteQuotesController.addListener(notifyListeners);
-  }
-
-  @override
-  void dispose() {
-    appStateController.removeListener(notifyListeners);
-    quotesController.removeListener(notifyListeners);
-    favoriteQuotesController.removeListener(notifyListeners);
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Navigator(
-      key: navigatorKey,
-      onPopPage: _handlePopPage,
-      pages: [
-        if (!appStateController.isInitialized) SplashScreen.page(),
-        if (appStateController.isInitialized) HomeScreen.page(appStateController.selectedTab),
-      ],
-    );
-  }
-
-  bool _handlePopPage(Route<dynamic> route, result) {
-    if (!route.didPop(result)) {
-      return false;
-    }
-    return true;
-  }
-
-  @override
-  Future<void> setNewRoutePath(configuration) async => null;
+  final _router = GoRouter(
+    initialLocation: Paths.home,
+    routes: [
+      ShellRoute(
+        builder: (context, state, child) => RootScreen(child: child),
+        routes: [
+          GoRoute(
+            path: '/home',
+            pageBuilder: (context, state) => const NoTransitionPage<void>(child: QuotesScreen()),
+          ),
+          GoRoute(
+            path: '/account',
+            pageBuilder: (context, state) => const NoTransitionPage<void>(
+              child: Center(
+                child: Text('Account'),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ],
+  );
 }

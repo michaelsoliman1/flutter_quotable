@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
+import 'package:quotes/app/shared/constants/constants.dart';
 
 class ErrorIndicator extends StatelessWidget {
-  const ErrorIndicator({Key? key, this.onButtonPress}) : super(key: key);
+  const ErrorIndicator({super.key, this.onTryAgainPressed});
 
-  final VoidCallback? onButtonPress;
+  final VoidCallback? onTryAgainPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Image.asset(Constants.EMPTY_PAGE),
-          ),
-          Text(
-            "Oops! Something Went Wrong!",
-            style: Theme.of(context).textTheme.bodyText1,
-          ),
-          TextButton(
-            onPressed: onButtonPress,
-            child: Text("Refresh"),
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
+          child: Image.asset(Assets.emptyPage),
+        ),
+        Text(
+          'Oops! Something Went Wrong!',
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
+        TextButton(
+          onPressed: onTryAgainPressed,
+          child: const Text('Try Again'),
+        ),
+      ],
     );
   }
 }

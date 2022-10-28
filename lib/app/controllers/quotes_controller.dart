@@ -1,8 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quotes/app/models/quote.dart';
+import 'package:quotes/core/services/api/quotes_api.dart';
 
-import '../../core/services/api/quotes_api.dart';
-import '../models/quote.dart';
+final quotesProvider = ChangeNotifierProvider(
+  (ref) => QuotesController()..getQuotes(),
+);
 
 class QuotesController extends ChangeNotifier {
   bool isLoading = false;
