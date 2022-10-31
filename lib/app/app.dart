@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quotes/core/theme/theme.dart';
 import 'package:quotes/router/router.dart';
+import 'package:quotes/shared/theme/theme.dart';
 
 class QuotesApp extends ConsumerWidget {
   const QuotesApp({super.key});

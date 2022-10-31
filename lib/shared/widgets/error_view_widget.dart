@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:quotes/app/shared/constants/constants.dart';
+import 'package:quotes/shared/constants/constants.dart';
 
 class ErrorIndicator extends StatelessWidget {
   const ErrorIndicator({super.key, this.onTryAgainPressed});

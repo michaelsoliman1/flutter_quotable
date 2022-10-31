@@ -2,8 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:http/http.dart' as http;
+import 'package:quotes/app/quotes/data/models/quote_model.dart';
 
-import 'package:quotes/app/models/quote.dart';
+import 'package:quotes/app/quotes/domain/entities/quote.dart';
 
 const baseUrl = 'https://api.quotable.io';
 
@@ -21,7 +22,8 @@ Future<List<Quote>> fetchQuotes() async {
     // the same thing. but when casting, you just tell the compiler more info to work with,
     // which is definetly better.
     final results = parsedBody['results'] as List;
-    final quotes = results.map<Quote>((map) => Quote.fromMap(map as Map<String, dynamic>)).toList();
+    final quotes =
+        results.map<Quote>((map) => QuoteModel.fromJson(map as Map<String, dynamic>)).toList();
     return quotes;
   } else {
     log('REQUEST FAILED : STATUS CODE ${response.statusCode}, ERROR: ${response.body}');

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:quotes/app/models/quote.dart';
-import 'package:quotes/app/shared/constants/constants.dart';
+import 'package:quotes/app/quotes/domain/domain.dart';
+import 'package:quotes/shared/constants/constants.dart';
 
 class QuoteItem extends StatelessWidget {
   const QuoteItem({

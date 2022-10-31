@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quotes/app/screens/quotes/quotes_screen.dart';
-import 'package:quotes/app/screens/root/root_screen.dart';
+import 'package:quotes/app/quotes/presentation/quotes_screen.dart';
+import 'package:quotes/app/root/root_screen.dart';
 import 'package:quotes/router/app_paths.dart';
 
 final routerProvider = Provider((ref) => AppRouter());
