@@ -1,4 +1,4 @@
-import 'package:quotes/app/quotes/data/providers/quotes_api_provider.dart';
+import 'package:quotes/app/quotes/data/providers/quotes_remote_provider.dart';
 import 'package:quotes/app/quotes/domain/domain.dart';
 
 class QuotesRepositoryImpl implements QuotesRepository {
