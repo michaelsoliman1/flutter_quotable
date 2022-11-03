@@ -1,11 +1,11 @@
-# Quotes App
+# Awesome Quotes
 
-The goal of this app is to demonstrate the best practices to follow while writing flutter apps.
+The app is the starting point to learn the best practices to follow while writing flutter apps.
 it will be focused on the following:
 
 - App Architecture
 - App Structure
-- Writing clean code following SOLID principles
+- Writing clean and organized code
 
 ## Refactor Roadmap
 
@@ -13,8 +13,8 @@ it will be focused on the following:
 - [x] use go_router for routing
 - [x] migrate to riverpod (instead of provider)
 - [x] refactor app with simple domain-oriented architecture `(presentation/application/domain/data)`
-  - [ ] domain layer (package)
-  - [ ] data layer (package)
+  - [ ] package domain layer
+  - [ ] package data layer
 - [ ] setup melos (for managing packages)
 
 <br>

@@ -1,0 +1,1 @@
+## Awesome Quotes Data Layer
