@@ -1,4 +1,4 @@
-import 'package:app_core/src/services/http/models/response/server_error.dart';
+import 'package:app_data/src/services/http/models/response/server_error.dart';
 
 abstract class ServerException implements Exception {
   String get message;

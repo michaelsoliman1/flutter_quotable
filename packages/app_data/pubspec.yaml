@@ -11,6 +11,7 @@ dependencies:
     path: ../app_core
   app_domain:
     path: ../app_domain
+  dio: ^4.0.6
   equatable: ^2.0.5
   get_it: ^7.2.0
   json_annotation: ^4.7.0

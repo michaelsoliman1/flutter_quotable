@@ -1,12 +1,11 @@
 import 'package:meta/meta.dart';
 
-@immutable
-
 /// {@template failure}
 ///
 /// Base class for all failures
 ///
 /// {@endtemplate}
+@immutable
 abstract class Failure {
   /// {@macro failure}
   const Failure(this.message);

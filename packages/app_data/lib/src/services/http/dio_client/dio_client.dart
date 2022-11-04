@@ -1,12 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:app_core/src/logger/logger.dart';
-import 'package:app_core/src/models/error/exceptions.dart';
-import 'package:app_core/src/services/http/http_service.dart';
-import 'package:app_core/src/services/http/models/error/error.dart';
-import 'package:app_core/src/services/http/models/response/server_error.dart';
-import 'package:app_core/src/services/http/models/response/server_response.dart';
+import 'package:app_core/app_core.dart' hide Response;
+import 'package:app_data/src/services/http/http_service.dart';
+import 'package:app_data/src/services/http/models/error/error.dart';
+import 'package:app_data/src/services/http/models/response/server_error.dart';
+import 'package:app_data/src/services/http/models/response/server_response.dart';
 import 'package:dio/dio.dart';
 
 class DioClient extends HttpService {
@@ -23,14 +22,12 @@ class DioClient extends HttpService {
     required Method method,
     Map<String, dynamic>? queryParameters,
     dynamic body,
-    CancelToken? cancelToken,
   }) {
     return _request(
       method: method,
       url: url,
       queryParameters: queryParameters,
       body: body,
-      cancelToken: cancelToken,
     );
   }
 

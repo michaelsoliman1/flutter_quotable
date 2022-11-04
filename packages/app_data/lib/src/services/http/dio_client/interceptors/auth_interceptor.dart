@@ -1,4 +1,4 @@
-import 'package:app_core/src/logger/logger.dart';
+import 'package:app_core/app_core.dart';
 import 'package:dio/dio.dart';
 
 /// {@template authInterceptor}

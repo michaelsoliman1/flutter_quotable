@@ -1,5 +1,4 @@
-import 'package:app_core/src/services/http/models/response/server_response.dart';
-import 'package:dio/dio.dart';
+import 'package:app_data/src/services/http/models/response/server_response.dart';
 
 /// Interface for http service
 abstract class HttpService {
@@ -13,7 +12,6 @@ abstract class HttpService {
     required Method method,
     Map<String, dynamic>? queryParameters,
     dynamic body,
-    CancelToken? cancelToken,
   });
 
   /// returns [ServerListResponse] that's parsed from the response body
@@ -41,13 +39,11 @@ abstract class HttpService {
   Future<ServerResponse> get(
     String url, {
     Map<String, dynamic>? queryParameters,
-    CancelToken? cancelToken,
   }) {
     return request(
       method: Method.get,
       url: url,
       queryParameters: queryParameters,
-      cancelToken: cancelToken,
     );
   }
 
@@ -64,13 +60,11 @@ abstract class HttpService {
   Future<ServerResponse> post(
     String url, {
     dynamic body,
-    CancelToken? cancelToken,
   }) {
     return request(
       method: Method.post,
       url: url,
       body: body,
-      cancelToken: cancelToken,
     );
   }
 
@@ -87,13 +81,11 @@ abstract class HttpService {
   Future<ServerResponse> put(
     String url, {
     dynamic body,
-    CancelToken? cancelToken,
   }) {
     return request(
       method: Method.put,
       url: url,
       body: body,
-      cancelToken: cancelToken,
     );
   }
 
@@ -108,13 +100,11 @@ abstract class HttpService {
   /// ```
   /// {@macro HttpService.request}
   Future<ServerResponse> delete(
-    String url, {
-    CancelToken? cancelToken,
-  }) {
+    String url,
+  ) {
     return request(
       method: Method.delete,
       url: url,
-      cancelToken: cancelToken,
     );
   }
 }

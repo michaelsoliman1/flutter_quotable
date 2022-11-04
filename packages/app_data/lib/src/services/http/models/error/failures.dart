@@ -1,4 +1,4 @@
-import 'package:app_core/src/models/error/failures.dart';
+import 'package:app_core/app_core.dart';
 
 /// {@template serverFailure}
 ///
