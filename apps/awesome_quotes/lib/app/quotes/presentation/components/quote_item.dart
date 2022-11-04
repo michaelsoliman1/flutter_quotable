@@ -1,5 +1,5 @@
 import 'package:app_domain/app_domain.dart';
-import 'package:awesome_quotes/shared/constants/constants.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 
 class QuoteItem extends StatelessWidget {
@@ -15,12 +15,12 @@ class QuoteItem extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       margin: const EdgeInsets.only(
-        left: Constants.defaultPadding,
-        right: Constants.defaultPadding,
-        top: Constants.defaultPadding,
+        left: UIConstants.defaultPadding,
+        right: UIConstants.defaultPadding,
+        top: UIConstants.defaultPadding,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(Constants.defaultPadding),
+        padding: const EdgeInsets.all(UIConstants.defaultPadding),
         child: Row(
           children: [
             Expanded(

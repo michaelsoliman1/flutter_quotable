@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
+/// {@template loadingIndicator}
+///
+/// An adaptive loading Indicator
+///
+/// {@endtemplate}
 class LoadingIndicator extends StatelessWidget {
+  /// {@macro loadingIndicator}
   const LoadingIndicator({super.key});
 
   @override

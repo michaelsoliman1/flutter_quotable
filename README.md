@@ -13,8 +13,9 @@ it will be focused on the following:
 - [x] use go_router for routing
 - [x] migrate to riverpod (instead of provider)
 - [x] refactor app with simple domain-oriented architecture `(presentation/application/domain/data)`
-  - [ ] package domain layer
-  - [ ] package data layer
+  - [x] package domain layer
+  - [x] package data layer
+- [x] package shared ui code
 - [ ] setup melos (for managing packages)
 
 <br>

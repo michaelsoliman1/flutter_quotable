@@ -12,6 +12,8 @@ dependencies:
     path: ../../packages/app_data
   app_domain:
     path: ../../packages/app_domain
+  app_ui:
+    path: ../../packages/app_ui
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
@@ -28,38 +30,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  assets:
-    - assets/images/
-
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/poppins/Poppins-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/poppins/Poppins-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/poppins/Poppins-Light.ttf
-          weight: 300
-        - asset: assets/fonts/poppins/Poppins-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/poppins/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/poppins/Poppins-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/poppins/Poppins-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/poppins/Poppins-Black.ttf
-          weight: 900
-    - family: DancingScript
-      fonts:
-        - asset: assets/fonts/dancing_script/DancingScript-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/dancing_script/DancingScript-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/dancing_script/DancingScript-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/dancing_script/DancingScript-Bold.ttf
-          weight: 700

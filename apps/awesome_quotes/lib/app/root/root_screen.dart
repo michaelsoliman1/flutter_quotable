@@ -19,7 +19,6 @@ class RootScreen extends StatelessWidget {
     final selectedTab = _calculateSelectedTab(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Quotes')),
       body: child,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedTab.index,
@@ -27,7 +26,7 @@ class RootScreen extends StatelessWidget {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
-            label: 'Quotes',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
