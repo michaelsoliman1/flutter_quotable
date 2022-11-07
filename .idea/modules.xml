@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/packages/app_core/melos_app_core.iml" filepath="$PROJECT_DIR$/packages/app_core/melos_app_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/app_data/melos_app_data.iml" filepath="$PROJECT_DIR$/packages/app_data/melos_app_data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/app_domain/melos_app_domain.iml" filepath="$PROJECT_DIR$/packages/app_domain/melos_app_domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/app_ui/melos_app_ui.iml" filepath="$PROJECT_DIR$/packages/app_ui/melos_app_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/awesome_quotes/melos_awesome_quotes.iml" filepath="$PROJECT_DIR$/apps/awesome_quotes/melos_awesome_quotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_quotes_app.iml" filepath="$PROJECT_DIR$/melos_quotes_app.iml" />
+    </modules>
+  </component>
+</project>

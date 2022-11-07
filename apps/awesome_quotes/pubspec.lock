@@ -16,7 +16,7 @@ packages:
     source: hosted
     version: "5.2.0"
   app_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../../packages/app_core"
       relative: true

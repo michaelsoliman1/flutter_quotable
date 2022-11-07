@@ -16,7 +16,7 @@ it will be focused on the following:
   - [x] package domain layer
   - [x] package data layer
 - [x] package shared ui code
-- [ ] setup melos (for managing packages)
+- [s] setup melos (for managing packages)
 
 <br>
 

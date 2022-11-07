@@ -1,0 +1,5 @@
+name: quotes_app
+
+packages:
+  - apps/**
+  - packages/**

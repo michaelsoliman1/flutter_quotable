@@ -134,7 +134,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-11-04T08:24:23.003976Z",
-  "generator": "pub",
-  "generatorVersion": "2.18.1"
+  "generated": "2022-11-07T11:15:56.334073Z",
+  "generator": "melos",
+  "generatorVersion": "2.3.1"
 }
