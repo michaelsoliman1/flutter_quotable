@@ -1,26 +1,27 @@
-# Quotes App
+# Awesome Quotes
 
-This app demo was initially made for GDSC flutter workshop, Cairo University to demonstrate the use of http and local storage in flutter.
-
-A year later, I thought of refactoring it, to share all the best practices I've learned so far.
-
-This is the initial roadmap I have for the refactor, will be updated whenever there is a good thing to add.
-The main points will be
+The app is the starting point to learn the best practices to follow while writing flutter apps.
+it will be focused on the following:
 
 - App Architecture
-- Writing clean and organized code following SOLID principles
+- App Structure
+- Writing clean and organized code
 
 ## Refactor Roadmap
 
-- [ ] use [very_good_analysis](https://pub.dev/packages/very_good_analysis) for lints as a start
-- [ ] prepare the app to use layered architecture `(presentation/application/domain/data)`
-- [ ] generate (domain/data) packages (layers) with mason brick
-- [ ] use go_router for routing
+- [x] use [very_good_analysis](https://pub.dev/packages/very_good_analysis) for lints as a start
+- [x] use go_router for routing
+- [x] migrate to riverpod (instead of provider)
+- [x] refactor app with simple domain-oriented architecture `(presentation/application/domain/data)`
+  - [x] package domain layer
+  - [x] package data layer
+- [x] package shared ui code
+- [s] setup melos (for managing packages)
 
 <br>
-<br>
 
-<img src="assets/screenshots/quotes.png" alt="hierarchy_after" height="500">
-<img src="assets/screenshots/saved.png" alt="hierarchy_after" height="500">
+## App Architecture
 
 <br>
+
+This app demo was initially made for GDSC flutter workshop, Cairo University to demonstrate how to use of http and local storage in flutter.
