@@ -5,7 +5,7 @@ it will be focused on the following:
 
 - App Architecture
 - App Structure
-- Writing clean and organized code
+- Writing clean and reusable code
 
 ## Refactor Roadmap
 
@@ -16,7 +16,7 @@ it will be focused on the following:
   - [x] package domain layer
   - [x] package data layer
 - [x] package shared ui code
-- [s] setup melos (for managing packages)
+- [x] setup melos (for managing packages)
 
 <br>
 
