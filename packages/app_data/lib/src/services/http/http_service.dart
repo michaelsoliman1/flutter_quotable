@@ -16,17 +16,18 @@ abstract class HttpService {
 
   /// returns [ServerListResponse] that's parsed from the response body
   ///
-  /// the [afterId] parameter can be used for pagination
-  /// shortcut for header `{'afterId': afterId}` that is added to the query params
+  /// the [page][limit] parameters is used for pagination
+  /// shortcut for `{'page': page, 'limit': limit}` that is added to the query params
   ///
   ///
   Future<ServerListResponse> requestList(
     String url, {
-    String? afterId,
+    int page = 1,
+    int limit = 20,
     Map<String, dynamic>? queryParameters,
   });
 
-  /// handy method for doing GET request
+  /// handy method for doing GET requests
   ///
   /// equivelant to
   /// ```
@@ -47,7 +48,7 @@ abstract class HttpService {
     );
   }
 
-  /// handy method for doing POST request
+  /// handy method for doing POST requests
   ///
   /// equivelant to
   /// ```
@@ -68,7 +69,7 @@ abstract class HttpService {
     );
   }
 
-  /// handy method for doing PUT request
+  /// handy method for doing PUT requests
   ///
   /// equivelant to
   /// ```
@@ -89,7 +90,7 @@ abstract class HttpService {
     );
   }
 
-  /// handy method for doing DELETE request
+  /// handy method for doing DELETE requests
   ///
   /// equivelant to
   /// ```

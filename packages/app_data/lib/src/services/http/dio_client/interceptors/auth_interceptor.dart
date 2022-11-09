@@ -1,3 +1,6 @@
+// we don't need an interceptor for our api, but it's kept as an example
+// ignore_for_file: todo
+
 import 'package:app_core/app_core.dart';
 import 'package:dio/dio.dart';
 

@@ -8,36 +8,35 @@ part of 'server_response.dart';
 
 ServerResponse _$ServerResponseFromJson(Map<String, dynamic> json) =>
     ServerResponse(
-      message: json['message'] as String? ?? '',
-      responseCode: json['responseCode'] as String?,
-      result: json['result'] as Map<String, dynamic>?,
-      url: json['url'] as String?,
+      result: ServerResponse.resultReadValue(json, 'result')
+              as Map<String, dynamic>? ??
+          const {},
     );
 
 Map<String, dynamic> _$ServerResponseToJson(ServerResponse instance) =>
     <String, dynamic>{
-      'message': instance.message,
-      'responseCode': instance.responseCode,
       'result': instance.result,
-      'url': instance.url,
     };
 
 ServerListResponse _$ServerListResponseFromJson(Map<String, dynamic> json) =>
     ServerListResponse(
-      message: json['message'] as String? ?? '',
-      responseCode: json['responseCode'] as String?,
+      count: json['count'] as int,
+      totalCount: json['totalCount'] as int,
+      page: json['page'] as int,
+      totalPages: json['totalPages'] as int,
+      lastItemIndex: json['lastItemIndex'] as int,
       result: (json['result'] as List<dynamic>?)
-          ?.map((e) => e as Map<String, dynamic>)
-          .toList(),
-      totalPages: json['numPages'] as int?,
-      afterId: json['afterId'] as String?,
+              ?.map((e) => e as Map<String, dynamic>)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$ServerListResponseToJson(ServerListResponse instance) =>
     <String, dynamic>{
-      'message': instance.message,
+      'count': instance.count,
+      'totalCount': instance.totalCount,
+      'page': instance.page,
+      'totalPages': instance.totalPages,
+      'lastItemIndex': instance.lastItemIndex,
       'result': instance.result,
-      'numPages': instance.totalPages,
-      'afterId': instance.afterId,
-      'responseCode': instance.responseCode,
     };

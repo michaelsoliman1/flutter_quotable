@@ -1,6 +1,12 @@
 import 'package:app_data/src/data/quote/models/quote_model.dart';
+import 'package:app_data/src/services/http/http_service.dart';
 
-class QuotesRemoteProvider {
+class QuotesRemoteDataProvider {
+  QuotesRemoteDataProvider(this._httpService);
+
+  // ignore: unused_field
+  final HttpService _httpService;
+
   Future<List<QuoteModel>> fetchQuotes() {
     throw UnimplementedError();
   }

@@ -34,11 +34,20 @@ class DioClient extends HttpService {
   @override
   Future<ServerListResponse> requestList(
     String url, {
-    String? afterId,
+    int page = 1,
+    int limit = 20,
     Map<String, dynamic>? queryParameters,
   }) {
+    final params = <String, dynamic>{}..addAll(queryParameters ?? {});
+    if (!params.containsKey('page')) {
+      params.addAll({'page': page});
+    }
+    if (!params.containsKey('limit')) {
+      params.addAll({'limit': limit});
+    }
     return _requestList(
       url: url,
+      queryParameters: params,
     );
   }
 
