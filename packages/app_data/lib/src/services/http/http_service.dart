@@ -1,10 +1,29 @@
+import 'package:app_core/app_core.dart';
+import 'package:app_data/src/services/http/models/error/exceptions.dart';
 import 'package:app_data/src/services/http/models/response/server_response.dart';
+
+/// The Http method to use for the request
+enum Method {
+  /// GET
+  get,
+
+  /// POST
+  post,
+
+  /// PUT
+  put,
+
+  /// DELETE
+  delete,
+}
 
 /// Interface for http service
 abstract class HttpService {
   /// {@template HttpService.request}
   ///
   /// returns [ServerResponse] that's parsed from the response body
+  ///
+  /// throws [ServerException] if a server error occured, [UnknownException] if an unknown error occured
   ///
   /// {@endtemplate}
   Future<ServerResponse> request({
@@ -16,10 +35,10 @@ abstract class HttpService {
 
   /// returns [ServerListResponse] that's parsed from the response body
   ///
-  /// the [page][limit] parameters is used for pagination
+  /// [page] and [limit] parameters is used for pagination
   /// shortcut for `{'page': page, 'limit': limit}` that is added to the query params
   ///
-  ///
+  /// throws [ServerException] if a server error occured, [UnknownException] if an unknown error occured
   Future<ServerListResponse> requestList(
     String url, {
     int page = 1,
@@ -108,19 +127,4 @@ abstract class HttpService {
       url: url,
     );
   }
-}
-
-/// The Http method to use for the request
-enum Method {
-  /// GET
-  get,
-
-  /// POST
-  post,
-
-  /// PUT
-  put,
-
-  /// DELETE
-  delete,
 }

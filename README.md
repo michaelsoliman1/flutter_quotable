@@ -20,6 +20,22 @@ it will be focused on the following:
 
 <br>
 
+## TODOs
+
+### Core
+
+- [ ] use `Either` to improve error catching
+
+### Presentation layer
+
+- [ ] add pagination
+
+### Data layer
+
+- [ ] use `injectable` to manage dependencies
+
+<br>
+
 ## App Architecture
 
 <br>

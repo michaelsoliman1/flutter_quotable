@@ -1,5 +1,5 @@
 abstract class ILocator {
-  Future<void> setup(String env);
+  Future<void> setup();
 
   T find<T extends Object>();
 

@@ -3,7 +3,7 @@ import 'package:app_data/src/locator/locator_setup.dart';
 
 class Locator implements ILocator {
   @override
-  Future<void> setup(String env) => setupLocator(env);
+  Future<void> setup() => setupLocator();
 
   @override
   T find<T extends Object>() => locator<T>();

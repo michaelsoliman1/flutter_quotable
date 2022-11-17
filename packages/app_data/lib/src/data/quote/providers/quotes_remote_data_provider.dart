@@ -7,11 +7,19 @@ class QuotesRemoteDataProvider {
   // ignore: unused_field
   final HttpService _httpService;
 
-  Future<List<QuoteModel>> fetchQuotes() {
-    throw UnimplementedError();
+  Future<List<QuoteModel>> fetchQuotes({required int page, int limit = 20}) async {
+    final response = await _httpService.requestList(
+      '/quotes',
+      page: page,
+      limit: limit,
+    );
+    return response.result.map(QuoteModel.fromJson).toList();
   }
 
-  Future<QuoteModel> fetchQuote({required String id}) {
-    throw UnimplementedError();
+  Future<QuoteModel> fetchQuote({required String id}) async {
+    final response = await _httpService.get(
+      '/quotes/$id',
+    );
+    return QuoteModel.fromJson(response.result);
   }
 }

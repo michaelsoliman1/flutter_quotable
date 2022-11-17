@@ -1,6 +1,6 @@
 import 'package:app_domain/src/quote/entities/entities.dart';
 
 abstract class QuotesRepository {
-  Future<List<Quote>> quotes();
+  Future<List<Quote>> quotes({required int page, int limit = 20});
   Future<Quote> quote({required String id});
 }
