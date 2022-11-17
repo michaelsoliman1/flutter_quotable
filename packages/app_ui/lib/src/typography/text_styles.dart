@@ -14,48 +14,49 @@ class AppTextStyle {
   /// Headline 1 Text Style
   static TextStyle get headline1 {
     return _baseTextStyle.copyWith(
-      fontSize: 56,
-      fontWeight: AppFontWeight.medium,
+      fontSize: 93,
+      fontWeight: AppFontWeight.light,
+      letterSpacing: -1.5,
     );
   }
 
   /// Headline 2 Text Style
   static TextStyle get headline2 {
     return _baseTextStyle.copyWith(
-      fontSize: 30,
-      fontWeight: AppFontWeight.regular,
+      fontSize: 58,
+      fontWeight: AppFontWeight.light,
+      letterSpacing: -0.5,
     );
   }
 
   /// Headline 3 Text Style
   static TextStyle get headline3 {
     return _baseTextStyle.copyWith(
-      fontSize: 28,
-      fontWeight: AppFontWeight.regular,
+      fontSize: 46,
     );
   }
 
   /// Headline 4 Text Style
   static TextStyle get headline4 {
     return _baseTextStyle.copyWith(
-      fontSize: 22,
-      fontWeight: AppFontWeight.bold,
+      fontSize: 33,
+      letterSpacing: 0.25,
     );
   }
 
   /// Headline 5 Text Style
   static TextStyle get headline5 {
     return _baseTextStyle.copyWith(
-      fontSize: 20,
-      fontWeight: AppFontWeight.medium,
+      fontSize: 23,
     );
   }
 
   /// Headline 6 Text Style
   static TextStyle get headline6 {
     return _baseTextStyle.copyWith(
-      fontSize: 22,
-      fontWeight: AppFontWeight.bold,
+      fontSize: 19,
+      fontWeight: AppFontWeight.medium,
+      letterSpacing: 0.15,
       fontFamily: 'DancingScript',
     );
   }
@@ -63,57 +64,59 @@ class AppTextStyle {
   /// Subtitle 1 Text Style
   static TextStyle get subtitle1 {
     return _baseTextStyle.copyWith(
-      fontSize: 16,
-      fontWeight: AppFontWeight.bold,
+      fontSize: 15,
+      letterSpacing: 0.15,
     );
   }
 
   /// Subtitle 2 Text Style
   static TextStyle get subtitle2 {
     return _baseTextStyle.copyWith(
-      fontSize: 14,
-      fontWeight: AppFontWeight.bold,
+      fontSize: 13,
+      fontWeight: AppFontWeight.medium,
+      letterSpacing: 0.1,
     );
   }
 
   /// Body Text 1 Text Style
   static TextStyle get bodyText1 {
     return _baseTextStyle.copyWith(
-      fontSize: 18,
-      fontWeight: AppFontWeight.medium,
+      fontSize: 15,
+      letterSpacing: 0.5,
     );
   }
 
   /// Body Text 2 Text Style (the default)
   static TextStyle get bodyText2 {
     return _baseTextStyle.copyWith(
-      fontSize: 16,
-      fontWeight: AppFontWeight.regular,
+      fontSize: 13,
+      letterSpacing: 0.25,
       fontFamily: 'DancingScript',
-    );
-  }
-
-  /// Caption Text Style
-  static TextStyle get caption {
-    return _baseTextStyle.copyWith(
-      fontSize: 14,
-      fontWeight: AppFontWeight.regular,
-    );
-  }
-
-  /// Overline Text Style
-  static TextStyle get overline {
-    return _baseTextStyle.copyWith(
-      fontSize: 16,
-      fontWeight: AppFontWeight.regular,
     );
   }
 
   /// Button Text Style
   static TextStyle get button {
     return _baseTextStyle.copyWith(
-      fontSize: 18,
+      fontSize: 13,
       fontWeight: AppFontWeight.medium,
+      letterSpacing: 1.25,
+    );
+  }
+
+  /// Caption Text Style
+  static TextStyle get caption {
+    return _baseTextStyle.copyWith(
+      fontSize: 12,
+      letterSpacing: 0.4,
+    );
+  }
+
+  /// Overline Text Style
+  static TextStyle get overline {
+    return _baseTextStyle.copyWith(
+      fontSize: 10,
+      letterSpacing: 1.5,
     );
   }
 }

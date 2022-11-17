@@ -7,8 +7,8 @@ class QuotesRepositoryImpl implements QuotesRepository {
   final QuotesRemoteDataProvider _remoteProvider;
 
   @override
-  Future<List<Quote>> quotes() {
-    return _remoteProvider.fetchQuotes();
+  Future<List<Quote>> quotes({required int page, int limit = 20}) {
+    return _remoteProvider.fetchQuotes(page: page, limit: limit);
   }
 
   @override

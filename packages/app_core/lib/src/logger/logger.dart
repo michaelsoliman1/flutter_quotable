@@ -1,6 +1,7 @@
+import 'package:logger/logger.dart' as log;
+
 class Logger {
-  //TODO add your own logger
-  static dynamic get logger => throw UnimplementedError();
+  static final log.Logger logger = log.Logger();
 
   /// additional callback to be executed on error
   ///
@@ -18,23 +19,23 @@ class Logger {
 
   static void debug(Object object, {StackTrace? stackTrace}) {
     // ignore: avoid_dynamic_calls
-    logger.debug(object);
+    logger.d('', object, stackTrace);
   }
 
   static void info(Object object) {
     // ignore: avoid_dynamic_calls
-    logger.info(object);
+    logger.i(object);
   }
 
   static void warning(Object object, {StackTrace? stackTrace}) {
     // ignore: avoid_dynamic_calls
-    logger.warning(object, stackTrace: stackTrace);
+    logger.w('', object, stackTrace);
   }
 
   /// a user made error, like bad api request, failed operations
   static void error(Object error, {StackTrace? stackTrace}) {
     // ignore: avoid_dynamic_calls
-    logger.error(error, stackTrace: stackTrace);
+    logger.e('', error, stackTrace);
     onError?.call(error, stackTrace: stackTrace);
   }
 
@@ -42,7 +43,7 @@ class Logger {
   /// should not happen
   static void severe(Object error, {StackTrace? stackTrace}) {
     // ignore: avoid_dynamic_calls
-    logger.error(error, stackTrace: stackTrace);
+    logger.wtf('', error, stackTrace);
     onSevere?.call(error, stackTrace: stackTrace);
   }
 }

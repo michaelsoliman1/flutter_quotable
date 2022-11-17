@@ -1,3 +1,4 @@
+import 'package:app_core/app_core.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:awesome_quotes/app/quotes/application/quotes_provider.dart';
 import 'package:awesome_quotes/app/quotes/presentation/components/quote_item.dart';
@@ -15,9 +16,12 @@ class QuotesScreen extends ConsumerWidget {
       appBar: AppBar(title: const Text('Awesome Quotes')),
       body: state.when(
         loading: () => const LoadingIndicator(),
-        error: (_, __) => ErrorIndicator(
-          onTryAgainPressed: () => ref.invalidate(quotesProvider),
-        ),
+        error: (e, __) {
+          Logger.error(e);
+          return ErrorIndicator(
+            onTryAgainPressed: () => ref.invalidate(quotesProvider),
+          );
+        },
         data: (quotes) => RefreshIndicator(
           onRefresh: () async => ref.invalidate(quotesProvider),
           child: ListView.builder(
