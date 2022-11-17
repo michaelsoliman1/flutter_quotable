@@ -1,10 +1,11 @@
 # Awesome Quotes
 
 The app is the starting point to learn the best practices to follow while writing flutter apps.
-it will be focused on the following:
+
+it follows the architecture purposed in this [presentation](https://drive.google.com/file/d/1odHgt_8XNGfnPeHkcrGeMNfkk1iuPV44/view) and it will focuse on:
 
 - App Architecture
-- App Structure
+- Folder Structure
 - Writing clean and reusable code
 
 ## Refactor Roadmap
