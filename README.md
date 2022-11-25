@@ -23,17 +23,16 @@ it follows the architecture purposed in this [presentation](https://drive.google
 
 ## TODOs
 
-### Core
-
-- [ ] use `Either` to improve error catching
-
 ### Presentation layer
-
-- [ ] add pagination
 
 ### Data layer
 
 - [ ] use `injectable` to manage dependencies
+
+### Core
+
+- [ ] use `Either` to improve error catching
+- [ ] pagination support
 
 <br>
 
