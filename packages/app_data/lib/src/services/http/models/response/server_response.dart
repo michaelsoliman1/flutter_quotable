@@ -29,7 +29,7 @@ class ServerPageResponse {
     required this.page,
     required this.totalPages,
     required this.lastItemIndex,
-    this.result = const [],
+    this.results = const [],
   });
 
   factory ServerPageResponse.fromJson(Map<String, dynamic> json) => _$ServerPageResponseFromJson(json);
@@ -52,5 +52,5 @@ class ServerPageResponse {
   final int lastItemIndex;
 
   /// list containing the items
-  final List<Map<String, dynamic>> result;
+  final List<Map<String, dynamic>> results;
 }

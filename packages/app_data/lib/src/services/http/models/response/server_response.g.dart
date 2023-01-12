@@ -25,7 +25,7 @@ ServerPageResponse _$ServerPageResponseFromJson(Map<String, dynamic> json) =>
       page: json['page'] as int,
       totalPages: json['totalPages'] as int,
       lastItemIndex: json['lastItemIndex'] as int,
-      result: (json['result'] as List<dynamic>?)
+      results: (json['results'] as List<dynamic>?)
               ?.map((e) => e as Map<String, dynamic>)
               .toList() ??
           const [],
@@ -38,5 +38,5 @@ Map<String, dynamic> _$ServerPageResponseToJson(ServerPageResponse instance) =>
       'page': instance.page,
       'totalPages': instance.totalPages,
       'lastItemIndex': instance.lastItemIndex,
-      'result': instance.result,
+      'results': instance.results,
     };

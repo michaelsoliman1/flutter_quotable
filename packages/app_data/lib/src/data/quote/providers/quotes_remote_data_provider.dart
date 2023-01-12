@@ -17,7 +17,7 @@ class QuotesRemoteDataProvider {
       totalCount: response.totalCount,
       pageIndex: response.page,
       totalPages: response.totalPages,
-      items: response.result.map(QuoteModel.fromJson).toList(),
+      items: response.results.map(QuoteModel.fromJson).toList(),
     );
   }
 

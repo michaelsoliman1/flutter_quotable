@@ -8,7 +8,7 @@ class PagedListView<T> extends StatelessWidget {
     required this.pagingController,
     required this.itemBuilder,
     this.noItemsMessage,
-    this.shrinkWrap = true,
+    this.shrinkWrap = false,
     this.physics,
     this.padding,
     this.scrollDirection = Axis.vertical,
@@ -45,6 +45,7 @@ class PagedListView<T> extends StatelessWidget {
           itemBuilder: itemBuilder,
           firstPageProgressIndicatorBuilder: (context) => const LoadingIndicator(),
           firstPageErrorIndicatorBuilder: (_) => const ErrorIndicator(),
+          newPageProgressIndicatorBuilder: (context) => const CircularProgressIndicator.adaptive(),
           noItemsFoundIndicatorBuilder: (_) => Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
