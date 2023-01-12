@@ -22,8 +22,8 @@ class ServerResponse {
 
 /// Response that contains a list of [Map<String, dynamic>]
 @JsonSerializable()
-class ServerListResponse {
-  const ServerListResponse({
+class ServerPageResponse {
+  const ServerPageResponse({
     required this.count,
     required this.totalCount,
     required this.page,
@@ -32,9 +32,9 @@ class ServerListResponse {
     this.result = const [],
   });
 
-  factory ServerListResponse.fromJson(Map<String, dynamic> json) => _$ServerListResponseFromJson(json);
+  factory ServerPageResponse.fromJson(Map<String, dynamic> json) => _$ServerPageResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ServerListResponseToJson(this);
+  Map<String, dynamic> toJson() => _$ServerPageResponseToJson(this);
 
   ///  The number of quotes returned in this response
   final int count;

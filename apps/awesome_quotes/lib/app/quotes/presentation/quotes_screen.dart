@@ -1,4 +1,4 @@
-import 'package:app_core/app_core.dart';
+import 'package:app_domain/app_domain.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:awesome_quotes/app/quotes/application/quotes_provider.dart';
 import 'package:awesome_quotes/app/quotes/presentation/components/quote_item.dart';
@@ -10,25 +10,13 @@ class QuotesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(quotesProvider);
+    final provider = ref.watch(quotesProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Awesome Quotes')),
-      body: state.when(
-        loading: () => const LoadingIndicator(),
-        error: (e, __) {
-          Logger.error(e);
-          return ErrorIndicator(
-            onTryAgainPressed: () => ref.invalidate(quotesProvider),
-          );
-        },
-        data: (quotes) => RefreshIndicator(
-          onRefresh: () async => ref.invalidate(quotesProvider),
-          child: ListView.builder(
-            itemCount: quotes.length,
-            itemBuilder: (context, index) => QuoteItem(qoute: quotes[index]),
-          ),
-        ),
+      body: PagedListView<Quote>(
+        pagingController: provider.pagingController,
+        itemBuilder: (context, quote, index) => QuoteItem(qoute: quote),
       ),
     );
   }

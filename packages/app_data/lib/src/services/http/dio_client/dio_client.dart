@@ -32,7 +32,7 @@ class DioClient extends HttpService {
   }
 
   @override
-  Future<ServerListResponse> requestList(
+  Future<ServerPageResponse> requestPage(
     String url, {
     int page = 1,
     int limit = 20,
@@ -76,7 +76,7 @@ class DioClient extends HttpService {
     }
   }
 
-  Future<ServerListResponse> _requestList({
+  Future<ServerPageResponse> _requestList({
     required String url,
     Map<String, dynamic>? queryParameters,
     CancelToken? cancelToken,
@@ -88,7 +88,7 @@ class DioClient extends HttpService {
         queryParameters: queryParameters,
         cancelToken: cancelToken,
       );
-      return ServerListResponse.fromJson(response.data!);
+      return ServerPageResponse.fromJson(response.data!);
     } on DioError catch (dioError) {
       _handleDioError(dioError);
       throw const UnknownException();
