@@ -26,12 +26,12 @@ class ErrorIndicator extends StatelessWidget {
           child: Icon(
             Icons.warning_rounded,
             size: 80,
-            color: Theme.of(context).errorColor,
+            color: Theme.of(context).colorScheme.error,
           ),
         ),
         Text(
           'Oops! Something Went Wrong!',
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
         if (onTryAgainPressed != null)
           TextButton(

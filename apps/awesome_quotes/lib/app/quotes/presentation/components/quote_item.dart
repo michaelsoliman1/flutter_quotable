@@ -29,7 +29,7 @@ class QuoteItem extends StatelessWidget {
                 children: [
                   Text(
                     qoute.content,
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
