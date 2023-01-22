@@ -19,3 +19,25 @@ class Response<T> {
   /// an optional message with the response
   final String? message;
 }
+
+class Page<T> {
+  Page({
+    required this.totalCount,
+    required this.items,
+    required this.pageIndex,
+    required this.totalPages,
+  });
+
+  /// The total number of quotes matching this query
+  final int totalCount;
+
+  /// The total number of pages matching this request
+  final int totalPages;
+
+  /// The current page index
+  final int pageIndex;
+
+  final List<T> items;
+
+  bool get isLastPage => pageIndex == totalPages - 1;
+}

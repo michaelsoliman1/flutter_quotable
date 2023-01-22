@@ -14,7 +14,7 @@ class BadRequestException implements ServerException {
 
   @override
   String toString() {
-    return 'BadRequestException(${serverError.toString()})';
+    return 'BadRequestException($serverError)';
   }
 }
 

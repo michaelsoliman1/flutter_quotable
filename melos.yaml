@@ -3,3 +3,8 @@ name: quotes_app
 packages:
   - apps/**
   - packages/**
+
+scripts:
+  fix:all:
+    run: melos exec dart fix --apply
+    description: Run dart fix for all packages.

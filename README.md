@@ -1,44 +1,34 @@
-# Awesome Quotes
+# Flutter Quotable
 
-The app is the starting point to learn the best practices to follow while writing flutter apps.
+Flutter Quotable is a flutter app based on [Quotable API](https://github.com/lukePeavey/quotable). It was originally built for a flutter workshop for [GDSC Cairo University.](https://www.facebook.com/DSCCUFE2021/)
 
-it follows the architecture purposed in this [presentation](https://drive.google.com/file/d/1odHgt_8XNGfnPeHkcrGeMNfkk1iuPV44/view) and it will focuse on:
+This app follows the architecture purposed in this [presentation](https://drive.google.com/file/d/1odHgt_8XNGfnPeHkcrGeMNfkk1iuPV44/view) and it will focus on:
 
 - App Architecture
 - Folder Structure
-- Writing clean and reusable code
-
-## Refactor Roadmap
-
-- [x] use [very_good_analysis](https://pub.dev/packages/very_good_analysis) for lints as a start
-- [x] use go_router for routing
-- [x] migrate to riverpod (instead of provider)
-- [x] refactor app with simple domain-oriented architecture `(presentation/application/domain/data)`
-  - [x] package domain layer
-  - [x] package data layer
-- [x] package shared ui code
-- [x] setup melos (for managing packages)
 
 <br>
 
-## TODOs
-
-### Core
-
-- [ ] use `Either` to improve error catching
-
-### Presentation layer
-
-- [ ] add pagination
+# TODOs
 
 ### Data layer
 
-- [ ] use `injectable` to manage dependencies
+- [ ] use `injectable` for registering dependencies
+
+### Core
+
+- [x] use `Either` to improve error handling
+- [x] pagination support
 
 <br>
 
-## App Architecture
+# Refactor Roadmap
 
-<br>
-
-This app demo was initially made for GDSC flutter workshop, Cairo University to demonstrate how to use of http and local storage in flutter.
+- [x] use [very_good_analysis](https://pub.dev/packages/very_good_analysis) for lints as a start
+- [x] use [go_router](https://pub.dev/packages/go_router) for routing
+- [x] migrate to [riverpod](https://riverpod.dev/) (instead of provider)
+- [x] refactor app to use domain-oriented architecture `(presentation/application/domain/data)`
+  - [x] refactor domain layer as a separate package
+  - [x] refactor data layer as a separate package
+- [x] refactor shared ui as a separate package
+- [x] setup [melos](https://melos.invertase.dev/) (for managing packages)

@@ -20,3 +20,18 @@ class UnknownException implements Exception {
     return 'UnknownException(message: )';
   }
 }
+
+class PlatformException implements Exception {
+  const PlatformException({
+    this.message = '',
+    this.stackTrace,
+  });
+
+  final String message;
+  final StackTrace? stackTrace;
+
+  @override
+  String toString() {
+    return 'PlatformException(message: )';
+  }
+}
