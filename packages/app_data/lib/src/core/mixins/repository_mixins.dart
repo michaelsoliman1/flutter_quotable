@@ -9,9 +9,9 @@ mixin RepositoryMixin {
       final response = await request();
       return Right(response);
     } on ServerException catch (e) {
-      return Left(_mapServerExceptionFailure(e));
+      return Left(_mapServerExceptionToFailure(e));
     } on PlatformException catch (e) {
-      return Left(_mapPlatformExceptionFailure(e));
+      return Left(_mapPlatformExceptionToFailure(e));
     } catch (e, s) {
       Logger.severe(e, stackTrace: s);
       return const Left(UnknownFailure());
@@ -19,12 +19,12 @@ mixin RepositoryMixin {
   }
 
   /// maps [ServerException] to a specific failure
-  Failure _mapServerExceptionFailure(ServerException e) {
+  Failure _mapServerExceptionToFailure(ServerException e) {
     return ServerFailure(e.message);
   }
 
   /// maps [PlatformException] to a specific failure
-  Failure _mapPlatformExceptionFailure(PlatformException e) {
+  Failure _mapPlatformExceptionToFailure(PlatformException e) {
     return const PlatformFailure();
   }
 }
