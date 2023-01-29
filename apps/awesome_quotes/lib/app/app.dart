@@ -11,6 +11,7 @@ class QuotesApp extends ConsumerWidget {
     final router = ref.watch(routerProvider);
 
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Awesome Quotes',
       theme: AppTheme.standard,
       routerConfig: router.config,

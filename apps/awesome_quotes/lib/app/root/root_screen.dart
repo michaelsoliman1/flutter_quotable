@@ -2,7 +2,8 @@ import 'package:awesome_quotes/router/router.dart';
 import 'package:flutter/material.dart';
 
 enum NavigationTab {
-  home,
+  quotes,
+  authors,
   account,
 }
 
@@ -26,10 +27,14 @@ class RootScreen extends StatelessWidget {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            label: 'Quotes',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined),
+            icon: Icon(Icons.person),
+            label: 'Authors',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
             label: 'Account',
           ),
         ],
@@ -40,19 +45,23 @@ class RootScreen extends StatelessWidget {
   NavigationTab _calculateSelectedTab(BuildContext context) {
     final location = GoRouter.of(context).location;
 
-    if (location.startsWith(Paths.home)) return NavigationTab.home;
+    if (location.startsWith(Paths.quotes)) return NavigationTab.quotes;
+    if (location.startsWith(Paths.authors)) return NavigationTab.authors;
     if (location.startsWith(Paths.account)) return NavigationTab.account;
-    return NavigationTab.home;
+    return NavigationTab.quotes;
   }
 
   void _onTap(int index, BuildContext context) {
     final navTab = NavigationTab.values[index];
     switch (navTab) {
-      case NavigationTab.home:
-        GoRouter.of(context).go(Paths.home);
+      case NavigationTab.quotes:
+        context.go(Paths.quotes);
+        break;
+      case NavigationTab.authors:
+        context.go(Paths.authors);
         break;
       case NavigationTab.account:
-        GoRouter.of(context).go(Paths.account);
+        context.go(Paths.account);
         break;
     }
   }

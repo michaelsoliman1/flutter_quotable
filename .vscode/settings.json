@@ -1,3 +1,14 @@
 {
-    "dart.runPubGetOnPubspecChanges": "never"
+    "dart.promptToGetPackages": false,
+    "dart.runPubGetOnPubspecChanges": "never",
+    "dart.lineLength": 105,
+    "editor.codeActionsOnSave": {
+        "quickfix.add.required": true,
+        "quickfix.add.required.multi": true,
+        "quickfix.create.constructorForFinalFields": true,
+        "quickfix.remove.unusedImport": true,
+        "quickfix.remove.unusedImport.multi": true,
+        "quickfix.organize.imports": true,
+        "quickfix.convert.toSuperParameters": true,
+    }   
 }

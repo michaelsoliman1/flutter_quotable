@@ -1,6 +1,7 @@
 class Paths {
   Paths._();
 
-  static const home = '/home';
+  static const quotes = '/quotes';
+  static const authors = '/authors';
   static const account = '/account';
 }
