@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Flutter Run -&gt; 'awesome_quotes'" type="FlutterRunConfigurationType" factoryName="Flutter">
-    <option name="filePath" value="$PROJECT_DIR$/apps/awesome_quotes/lib/main.dart" />
+  <configuration default="false" name="Flutter Run -&gt; 'flutter_quotable'" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="filePath" value="$PROJECT_DIR$/apps/flutter_quotable/lib/main.dart" />
     <method v="2" />
   </configuration>
 </component>

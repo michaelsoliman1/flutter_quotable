@@ -5,21 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "awesome_quotes",
-            "cwd": "apps/awesome_quotes",
+            "name": "flutter_quotable",
+            "cwd": "apps/flutter_quotable",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "awesome_quotes (profile mode)",
-            "cwd": "apps/awesome_quotes",
+            "name": "flutter_quotable (profile mode)",
+            "cwd": "apps/flutter_quotable",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "awesome_quotes (release mode)",
-            "cwd": "apps/awesome_quotes",
+            "name": "flutter_quotable (release mode)",
+            "cwd": "apps/flutter_quotable",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
