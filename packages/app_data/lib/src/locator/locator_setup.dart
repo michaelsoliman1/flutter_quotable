@@ -1,6 +1,6 @@
-import 'package:app_data/src/data/author/providers/authors_remote_data_provider.dart';
+import 'package:app_data/src/data/author/data_sources/authors_remote_data_source.dart';
 import 'package:app_data/src/data/author/repositories/authors_repository.dart';
-import 'package:app_data/src/data/quote/providers/quotes_remote_data_provider.dart';
+import 'package:app_data/src/data/quote/data_sources/quotes_remote_data_source.dart';
 import 'package:app_data/src/data/quote/repositories/quotes_repository.dart';
 import 'package:app_data/src/locator/constants.dart';
 import 'package:app_data/src/services/http/dio_client/dio_client.dart';
@@ -22,10 +22,10 @@ Future<void> setupLocator() async {
       ),
     )
     // quotes related dependencies
-    ..registerLazySingleton(() => QuotesRemoteDataProvider(locator()))
+    ..registerLazySingleton(() => QuotesRemoteDataSource(locator()))
     ..registerLazySingleton<QuotesRepository>(() => QuotesRepositoryImpl(locator()))
 
     // authors related dependencies
-    ..registerLazySingleton(() => AuthorsRemoteDataProvider(locator()))
+    ..registerLazySingleton(() => AuthorsRemoteDataSource(locator()))
     ..registerLazySingleton<AuthorsRepository>(() => AuthorsRepositoryImpl(locator()));
 }
