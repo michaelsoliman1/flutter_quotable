@@ -8,7 +8,7 @@ import 'package:test/test.dart';
 
 import 'quotes_remote_data_source_test.mocks.dart';
 
-final quotesJson = {
+final quotesPageJson = {
   'count': 1,
   'totalCount': 1,
   'page': 1,
@@ -30,29 +30,42 @@ const quotes = [
 @GenerateMocks([HttpService])
 void main() {
   late MockHttpService mockHttpService;
-  late QuotesRemoteDataSource sot;
+  late QuotesRemoteDataSource quotesRemoteDataSource;
 
   setUp(() {
     mockHttpService = MockHttpService();
-    sot = QuotesRemoteDataSource(mockHttpService);
+    quotesRemoteDataSource = QuotesRemoteDataSource(mockHttpService);
   });
 
   group(
-    'Quotes Remote Data Source',
+    'Fetch Quotes',
     () {
       test(
         'Return List of Quotes',
         () async {
           when(mockHttpService.requestPage(QuotesApis.quotes))
-              .thenAnswer((_) async => ServerPageResponse.fromJson(quotesJson));
+              .thenAnswer((_) async => ServerPageResponse.fromJson(quotesPageJson));
 
-          final fetchedQuotes = await sot.fetchQuotes(page: 1);
+          final fetchedQuotes = await quotesRemoteDataSource.fetchQuotes(page: 1);
 
           verify(mockHttpService.requestPage(QuotesApis.quotes)).called(1);
 
           expect(
             fetchedQuotes.items,
             quotes,
+          );
+        },
+      );
+
+      test(
+        'throws a ServerException on server error',
+        () {
+          when(mockHttpService.requestPage(QuotesApis.quotes))
+              .thenThrow(const BadRequestException(ServerError()));
+
+          expect(
+            () => quotesRemoteDataSource.fetchQuotes(page: 1),
+            throwsA(const BadRequestException(ServerError())),
           );
         },
       );
