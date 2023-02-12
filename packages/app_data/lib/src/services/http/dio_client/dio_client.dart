@@ -2,16 +2,21 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:app_core/app_core.dart' hide Response;
+import 'package:app_data/src/locator/constants.dart';
 import 'package:app_data/src/services/http/http_service.dart';
 import 'package:app_data/src/services/http/models/error/error.dart';
 import 'package:app_data/src/services/http/models/response/server_error.dart';
 import 'package:app_data/src/services/http/models/response/server_response.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
+@Singleton(as: HttpService)
 class DioClient extends HttpService {
-  DioClient(String url, {Iterable<Interceptor> interceptors = const []}) {
+  DioClient(
+    @Named(baseUrlInstanceName) String url,
+  ) {
     _client = Dio(BaseOptions(baseUrl: url, connectTimeout: 1000 * 15))
-      ..interceptors.addAll(interceptors);
+      ..interceptors.addAll([LogInterceptor()]);
   }
 
   late final Dio _client;

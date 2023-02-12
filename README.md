@@ -13,7 +13,7 @@ This app follows the architecture purposed in this [presentation](https://drive.
 
 ### Data layer
 
-- [ ] use `injectable` for registering dependencies
+- [x] use `injectable` for registering dependencies
 
 ### Core
 

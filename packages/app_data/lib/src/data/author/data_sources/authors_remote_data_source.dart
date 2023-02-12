@@ -2,7 +2,9 @@ import 'package:app_core/app_core.dart';
 import 'package:app_data/src/data/author/data_sources/apis.dart';
 import 'package:app_data/src/data/author/models/author_model.dart';
 import 'package:app_data/src/services/http/http_service.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton()
 class AuthorsRemoteDataSource {
   AuthorsRemoteDataSource(this._httpService);
 
