@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quotable/router/router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class QuotesApp extends ConsumerWidget {
-  const QuotesApp({super.key});
+class FlutterQuotable extends ConsumerWidget {
+  const FlutterQuotable({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -12,7 +12,7 @@ class QuotesApp extends ConsumerWidget {
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Awesome Quotes',
+      title: 'Flutter Quotable',
       theme: AppTheme.standard,
       routerConfig: router.config,
     );

@@ -4,7 +4,7 @@ part 'server_error.g.dart';
 
 /// Server error returned from backend
 ///
-// TODO customize this class to mirror the error object returned
+// you can customize this class to mirror the error object returned
 @JsonSerializable()
 class ServerError {
   const ServerError({

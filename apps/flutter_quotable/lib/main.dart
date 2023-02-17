@@ -3,6 +3,6 @@ import 'package:flutter_quotable/bootstrap.dart';
 
 void main() {
   bootstrap(
-    () => const QuotesApp(),
+    () => const FlutterQuotable(),
   );
 }
