@@ -1,5 +1,7 @@
-class Author {
-  Author({
+import 'package:equatable/equatable.dart';
+
+class Author extends Equatable {
+  const Author({
     required this.id,
     required this.bio,
     required this.description,
@@ -30,4 +32,15 @@ class Author {
 
   /// The number of quotes by this author
   final int quoteCount;
+
+  @override
+  List<Object?> get props => [
+        id,
+        bio,
+        description,
+        link,
+        name,
+        slug,
+        quoteCount,
+      ];
 }

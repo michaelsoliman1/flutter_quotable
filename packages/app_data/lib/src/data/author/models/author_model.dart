@@ -5,7 +5,7 @@ part 'author_model.g.dart';
 
 @JsonSerializable()
 class AuthorModel extends Author {
-  AuthorModel({
+  const AuthorModel({
     required super.id,
     required super.bio,
     required super.description,
