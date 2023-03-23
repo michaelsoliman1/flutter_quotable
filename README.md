@@ -8,8 +8,8 @@ it will primarily focus on:
 - App Folder Structure (using packages and [Melos](https://melos.invertase.dev/))
 
 ### Quick Overview
-<img src="presentation/architecture.png" width="350" title="architecture">
-<img src="presentation/folder_structure.png" width="350" title="architecture">
+<img src="resources/architecture.png" width="350" title="architecture">
+<img src="resources/folder_structure.png" width="350" title="architecture">
 
 For more info check the presentation mentioned above
 

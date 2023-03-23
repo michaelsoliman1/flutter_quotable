@@ -3,11 +3,12 @@ import 'dart:io';
 
 import 'package:app_core/app_core.dart' hide Response;
 import 'package:app_data/src/locator/constants.dart';
+import 'package:app_data/src/services/http/dio_client/interceptors/log_interceptor.dart';
 import 'package:app_data/src/services/http/http_service.dart';
 import 'package:app_data/src/services/http/models/error/error.dart';
 import 'package:app_data/src/services/http/models/response/server_error.dart';
 import 'package:app_data/src/services/http/models/response/server_response.dart';
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' hide LogInterceptor;
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: HttpService)
@@ -15,8 +16,9 @@ class DioClient extends HttpService {
   DioClient(
     @Named(baseUrlInstanceName) String url,
   ) {
-    _client = Dio(BaseOptions(baseUrl: url, connectTimeout: 1000 * 15))
-      ..interceptors.addAll([LogInterceptor()]);
+    _client = Dio(
+      BaseOptions(baseUrl: url, connectTimeout: 1000 * 15), //
+    )..interceptors.addAll([LogInterceptor()]);
   }
 
   late final Dio _client;
