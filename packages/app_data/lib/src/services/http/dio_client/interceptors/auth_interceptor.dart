@@ -26,10 +26,8 @@ class AuthInterceptor extends QueuedInterceptor {
   // ignore: avoid_void_async, avoid_renaming_method_parameters
   void onError(DioError error, ErrorInterceptorHandler handler) async {
     try {
-      _logError(error);
       if (error.response?.statusCode == 401) {
         // TODO add your auth refresh logic
-
       }
       return handler.reject(error);
     } on DioError catch (e) {
@@ -38,20 +36,5 @@ class AuthInterceptor extends QueuedInterceptor {
       Logger.severe(e, stackTrace: s);
       handler.reject(error);
     }
-  }
-
-  String _shortenPath(String path) {
-    final matchIndex = path.indexOf('api');
-    return matchIndex == -1 ? path : path.substring(matchIndex);
-  }
-
-  void _logError(DioError error) {
-    Logger.error(
-      '''
-        API ERROR: ${error.error ?? ''}
-        Status Code: ${error.response?.statusCode ?? ''} 
-        Status Message: ${error.response?.statusMessage ?? ''} 
-        Path: ${_shortenPath(error.requestOptions.path)}''',
-    );
   }
 }
