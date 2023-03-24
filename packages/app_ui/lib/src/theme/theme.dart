@@ -9,6 +9,9 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: AppColorScheme.lightColorScheme,
       textTheme: AppTextTheme.lightTextTheme,
+      appBarTheme: AppBarTheme(
+        foregroundColor: AppColorScheme.lightColorScheme.secondary,
+      ),
     );
   }
 }

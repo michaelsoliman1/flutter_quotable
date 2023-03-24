@@ -1,7 +1,9 @@
-/// UI Constants
-class UIConstants {
-  UIConstants._();
+class Paddings {
+  Paddings._();
 
-  /// default padding
-  static const defaultPadding = 20.0;
+  /// Inner padding
+  static const inner = 16.0;
+
+  /// Outer padding
+  static const outer = 24.0;
 }
