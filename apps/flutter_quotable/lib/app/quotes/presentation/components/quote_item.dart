@@ -14,32 +14,21 @@ class QuoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      margin: const EdgeInsets.only(
-        left: UIConstants.defaultPadding,
-        right: UIConstants.defaultPadding,
-        top: UIConstants.defaultPadding,
-      ),
       child: Padding(
-        padding: const EdgeInsets.all(UIConstants.defaultPadding),
-        child: Row(
+        padding: const EdgeInsets.all(Paddings.inner),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    qoute.content,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                  const SizedBox(height: 20),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Text(
-                      qoute.author,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ),
-                ],
+            Text(
+              qoute.content,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 20),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Text(
+                qoute.author,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
           ],

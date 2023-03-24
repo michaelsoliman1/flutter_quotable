@@ -14,13 +14,8 @@ class AuthorItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      margin: const EdgeInsets.only(
-        left: UIConstants.defaultPadding,
-        right: UIConstants.defaultPadding,
-        top: UIConstants.defaultPadding,
-      ),
       child: Padding(
-        padding: const EdgeInsets.all(UIConstants.defaultPadding),
+        padding: const EdgeInsets.all(Paddings.inner),
         child: Row(
           children: [
             Expanded(

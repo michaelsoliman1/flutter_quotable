@@ -1,3 +1,4 @@
+import 'package:app_ui/src/constants/constants.dart';
 import 'package:app_ui/src/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart' as p;
@@ -39,7 +40,7 @@ class PagedListView<T> extends StatelessWidget {
         scrollDirection: scrollDirection,
         shrinkWrap: shrinkWrap,
         pagingController: pagingController,
-        padding: padding ?? const EdgeInsets.all(10),
+        padding: padding ?? const EdgeInsets.all(Paddings.outer),
         separatorBuilder: (_, __) => const SizedBox(height: 10),
         builderDelegate: p.PagedChildBuilderDelegate<T>(
           itemBuilder: itemBuilder,
