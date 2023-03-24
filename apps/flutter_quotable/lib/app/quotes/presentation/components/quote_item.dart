@@ -29,11 +29,15 @@ class QuoteItem extends StatelessWidget {
                 children: [
                   Text(
                     qoute.content,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
+                  const SizedBox(height: 20),
                   Align(
                     alignment: Alignment.bottomRight,
-                    child: Text(qoute.author),
+                    child: Text(
+                      qoute.author,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
                   ),
                 ],
               ),

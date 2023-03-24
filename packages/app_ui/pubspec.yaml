@@ -44,13 +44,13 @@ flutter:
           weight: 800
         - asset: assets/fonts/poppins/Poppins-Black.ttf
           weight: 900
-    - family: DancingScript
+    - family: Caveat
       fonts:
-        - asset: assets/fonts/dancing_script/DancingScript-Regular.ttf
+        - asset: assets/fonts/caveat/Caveat-Regular.ttf
           weight: 400
-        - asset: assets/fonts/dancing_script/DancingScript-Medium.ttf
+        - asset: assets/fonts/caveat/Caveat-Medium.ttf
           weight: 500
-        - asset: assets/fonts/dancing_script/DancingScript-SemiBold.ttf
+        - asset: assets/fonts/caveat/Caveat-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/dancing_script/DancingScript-Bold.ttf
+        - asset: assets/fonts/caveat/Caveat-Bold.ttf
           weight: 700

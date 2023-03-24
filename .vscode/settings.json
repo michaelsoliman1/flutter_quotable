@@ -10,5 +10,8 @@
         "quickfix.remove.unusedImport.multi": true,
         "quickfix.organize.imports": true,
         "quickfix.convert.toSuperParameters": true,
-    }   
+        "quickfix.convert.quotes": true,
+        "quickfix.convert.toPackageImport": true,
+        "quickfix.add.const": true
+    }
 }
