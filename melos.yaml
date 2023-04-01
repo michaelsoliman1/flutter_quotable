@@ -5,6 +5,12 @@ packages:
   - packages/**
 
 scripts:
+  upgrade-deps:
+    run: melos exec flutter pub upgrade
+
+  upgrade-deps-major-versions:
+    run: melos exec flutter pub upgrade --major-versions
+
   fix:all:
     run: melos exec dart fix --apply
     description: Run dart fix for all packages.
