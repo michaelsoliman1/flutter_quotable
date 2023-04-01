@@ -1,0 +1,21 @@
+name: app_ui_widgetbooks
+description: Widgetbook for App UI.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.2 <3.0.0"
+
+dependencies:
+  app_ui:
+    path: ../../packages/app_ui
+  flutter:
+    sdk: flutter
+  widgetbook_annotation: ^2.1.0
+  widgetbook: ^2.4.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  widgetbook_generator: ^2.4.1
+  build_runner: ^2.3.3
