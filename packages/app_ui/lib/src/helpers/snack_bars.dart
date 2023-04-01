@@ -56,7 +56,7 @@ class SnackBars {
               ),
             ],
           ),
-          backgroundColor: AppTheme.standard.colorScheme.error,
+          backgroundColor: AppTheme.light.colorScheme.error,
         ),
       );
   }

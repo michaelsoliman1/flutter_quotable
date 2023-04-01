@@ -32,7 +32,7 @@ class ListItem extends StatelessWidget {
       child: Container(
         height: preferredHeight,
         decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(8),
         ),
         padding: padding ?? const EdgeInsets.all(15),
