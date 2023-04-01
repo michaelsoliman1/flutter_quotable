@@ -3,6 +3,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quotable/app/authers/application/authors_provider.dart';
 import 'package:flutter_quotable/app/authers/presentation/components/author_item.dart';
+import 'package:flutter_quotable/l10n/l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class AuthorsScreen extends ConsumerWidget {
@@ -13,7 +14,7 @@ class AuthorsScreen extends ConsumerWidget {
     final provider = ref.watch(authorsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Authors')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.authors)),
       body: PagedListView<Author>(
         pagingController: provider.pagingController,
         itemBuilder: (context, author, index) => AuthorItem(author: author),
