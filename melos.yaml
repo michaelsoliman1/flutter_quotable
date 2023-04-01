@@ -5,12 +5,19 @@ packages:
   - packages/**
 
 scripts:
+  postclean: >
+    melos exec --flutter -- "flutter clean"
+
   upgrade-deps:
     run: melos exec flutter pub upgrade
-
   upgrade-deps-major-versions:
     run: melos exec flutter pub upgrade --major-versions
 
   fix:all:
     run: melos exec dart fix --apply
     description: Run dart fix for all packages.
+
+  build_runner:build:all:
+    run: melos exec --depends-on="build_runner" \
+      flutter pub run build_runner build --delete-conflicting-outputs
+    description: Run a build_runner build in the each app.
