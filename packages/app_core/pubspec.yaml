@@ -8,6 +8,10 @@ environment:
 
 dependencies:
   dartz: ^0.10.1
+  firebase_analytics: ^10.2.0
+  firebase_crashlytics: ^3.1.0
+  flutter:
+    sdk: flutter
   internet_connection_checker: ^1.0.0+1
   logger: ^1.1.0
   meta: ^1.8.0
