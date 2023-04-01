@@ -1,3 +1,4 @@
+/// App Core Services that are used across all packages
 library app_core;
 
 export 'package:dartz/dartz.dart' show Either, Left, Right;

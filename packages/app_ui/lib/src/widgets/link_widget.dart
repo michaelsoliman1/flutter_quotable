@@ -8,9 +8,9 @@ class UrlLaunchException implements Exception {}
 
 class LinkWidget extends StatelessWidget {
   const LinkWidget({
-    super.key,
     required this.link,
     required this.child,
+    super.key,
   });
 
   final Link? link;

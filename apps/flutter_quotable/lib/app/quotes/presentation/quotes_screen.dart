@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quotable/app/quotes/application/quotes_provider.dart';
 import 'package:flutter_quotable/app/quotes/presentation/components/quote_item.dart';
 import 'package:flutter_quotable/l10n/l10n.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class QuotesScreen extends ConsumerWidget {
   const QuotesScreen({super.key});

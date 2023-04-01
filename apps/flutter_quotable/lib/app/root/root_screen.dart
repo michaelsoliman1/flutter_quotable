@@ -9,8 +9,8 @@ enum NavigationTab {
 
 class RootScreen extends StatelessWidget {
   const RootScreen({
-    super.key,
     required this.child,
+    super.key,
   });
 
   final Widget child;

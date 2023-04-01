@@ -3,7 +3,7 @@ import 'package:app_domain/app_domain.dart';
 import 'package:app_ui/app_ui.dart';
 
 import 'package:flutter_quotable/locator.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final authorsProvider = Provider((ref) {
   return AuthorsProvider(locator());

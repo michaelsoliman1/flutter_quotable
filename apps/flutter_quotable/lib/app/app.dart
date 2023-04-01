@@ -2,7 +2,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quotable/l10n/l10n.dart';
 import 'package:flutter_quotable/router/router.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class FlutterQuotable extends ConsumerWidget {
   const FlutterQuotable({super.key});

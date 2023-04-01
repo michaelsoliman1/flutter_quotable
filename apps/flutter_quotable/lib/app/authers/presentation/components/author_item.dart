@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class AuthorItem extends StatelessWidget {
   const AuthorItem({
-    super.key,
     required this.author,
+    super.key,
   });
 
   final Author author;

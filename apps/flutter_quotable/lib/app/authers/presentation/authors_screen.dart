@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quotable/app/authers/application/authors_provider.dart';
 import 'package:flutter_quotable/app/authers/presentation/components/author_item.dart';
 import 'package:flutter_quotable/l10n/l10n.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class AuthorsScreen extends ConsumerWidget {
   const AuthorsScreen({super.key});
