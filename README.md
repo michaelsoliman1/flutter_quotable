@@ -12,38 +12,3 @@ it will primarily focus on:
 <img src="resources/folder_structure.png" width="350" title="architecture">
 
 For more info check the presentation mentioned above
-
-<br>
-
-# TODOs
-
-### Architecture
-- [x] Setup project packages `(presentation/application/domain/data)`
-  - [x] presentation/application (flutter_quotable) package
-  - [x] domain layer package
-  - [x] data layer package
-  - [x] core package
-  - [x] ui package
-
-
-### UI
-- [x] add pagination support with [infinite_scroll_pagination](https://pub.dev/packages/infinite_scroll_pagination)
-### Core
-- [x] use [Dartz](https://pub.dev/packages/dartz) (Functional Programming) to improve error handling
-
-
-### Data layer
-- [x] use [injectable](https://pub.dev/packages/injectable) for registering dependencies
-
-### Style
-
-- [x] use [very_good_analysis](https://pub.dev/packages/very_good_analysis) for lints
-
-
-<br>
-
-## Contributing
-
-Contributions are always welcome!
-
-if you find any of the open todos suitable to you, submit a pr with it 
