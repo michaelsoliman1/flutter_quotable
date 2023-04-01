@@ -17,6 +17,10 @@ dependencies:
   app_ui:
     path: ../../packages/app_ui
   cupertino_icons: ^1.0.2
+  # firebase plugins need to be direct dependencies
+  firebase_analytics: ^10.2.0
+  firebase_core: ^2.9.0
+  firebase_crashlytics: ^3.1.0
   flutter:
     sdk: flutter
   flutter_localizations:
