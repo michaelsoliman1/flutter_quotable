@@ -10,6 +10,7 @@ class AppTheme {
       colorScheme: AppColorScheme.lightColorScheme,
       textTheme: AppTextTheme.lightTextTheme,
       appBarTheme: AppBarTheme(
+        centerTitle: true,
         foregroundColor: AppColorScheme.lightColorScheme.secondary,
       ),
     );
