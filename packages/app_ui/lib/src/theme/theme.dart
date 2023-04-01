@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 /// Namespace for the App [ThemeData].
 class AppTheme {
-  static ThemeData get standard {
+  static ThemeData get light {
     return ThemeData(
       useMaterial3: true,
       colorScheme: AppColorScheme.lightColorScheme,

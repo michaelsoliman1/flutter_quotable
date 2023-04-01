@@ -13,7 +13,7 @@ class QuoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      shape: RoundedRectangleBorder(borderRadius: Corners.outerRadius),
       child: Padding(
         padding: const EdgeInsets.all(Paddings.inner),
         child: Column(

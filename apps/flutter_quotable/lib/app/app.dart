@@ -13,7 +13,7 @@ class FlutterQuotable extends ConsumerWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Quotable',
-      theme: AppTheme.standard,
+      theme: AppTheme.light,
       routerConfig: router.config,
     );
   }
