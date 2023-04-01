@@ -1,3 +1,4 @@
+/// App UI Package that provides Themes and Components
 library app_ui;
 
 export 'src/constants/constants.dart';

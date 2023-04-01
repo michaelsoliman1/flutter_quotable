@@ -3,8 +3,8 @@ import 'package:flutter_quotable/app/authers/presentation/authors_screen.dart';
 import 'package:flutter_quotable/app/quotes/presentation/quotes_screen.dart';
 import 'package:flutter_quotable/app/root/root_screen.dart';
 import 'package:flutter_quotable/router/app_paths.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final routerProvider = Provider((ref) => AppRouter());
 

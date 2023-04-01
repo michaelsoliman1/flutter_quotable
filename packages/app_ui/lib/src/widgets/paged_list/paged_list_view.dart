@@ -5,7 +5,6 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart' as p
 
 class PagedListView<T> extends StatelessWidget {
   const PagedListView({
-    super.key,
     required this.pagingController,
     required this.itemBuilder,
     this.noItemsMessage,
@@ -15,6 +14,7 @@ class PagedListView<T> extends StatelessWidget {
     this.scrollDirection = Axis.vertical,
     this.scrollController,
     this.primary,
+    super.key,
   });
 
   final p.PagingController<int, T> pagingController;

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class QuoteItem extends StatelessWidget {
   const QuoteItem({
-    super.key,
     required this.qoute,
+    super.key,
   });
 
   final Quote qoute;

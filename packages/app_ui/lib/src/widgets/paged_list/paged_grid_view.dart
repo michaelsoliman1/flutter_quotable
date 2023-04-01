@@ -3,7 +3,6 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart' as p
 
 class PagedGridView<T> extends StatelessWidget {
   const PagedGridView({
-    super.key,
     required this.pagingController,
     required this.itemBuilder,
     required this.crossAxisCount,
@@ -11,6 +10,7 @@ class PagedGridView<T> extends StatelessWidget {
     this.crossAxisSpacing,
     this.mainAxisSpacing,
     this.primary,
+    super.key,
   });
 
   final int crossAxisCount;
