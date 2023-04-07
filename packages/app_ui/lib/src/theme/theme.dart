@@ -15,4 +15,14 @@ class AppTheme {
       ),
     );
   }
+
+  static ThemeData get dark {
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: AppColorScheme.darkColorScheme,
+      appBarTheme: const AppBarTheme(
+        centerTitle: true,
+      ),
+    );
+  }
 }

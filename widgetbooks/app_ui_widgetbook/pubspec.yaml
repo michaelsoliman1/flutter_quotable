@@ -11,11 +11,9 @@ dependencies:
     path: ../../packages/app_ui
   flutter:
     sdk: flutter
-  widgetbook_annotation: ^2.1.0
-  widgetbook: ^2.4.1
+  widgetbook: ^3.0.0-beta.13
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  widgetbook_generator: ^2.4.1
   build_runner: ^2.3.3

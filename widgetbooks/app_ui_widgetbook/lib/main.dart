@@ -12,63 +12,74 @@ class AppUIWidgetbook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final devices = [
+      Apple.iPhone11,
+      Apple.iPhone12,
+    ];
+    final deviceFrameBuilder = DefaultDeviceFrame(
+      setting: DeviceSetting.firstAsSelected(devices: devices),
+    );
+
+    final activeFrameBuilder = WidgetbookFrame(
+      setting: DeviceSetting.firstAsSelected(devices: devices),
+    );
+
     return Widgetbook.material(
-      appInfo: AppInfo(
-        name: 'App UI',
-      ),
-      themes: [
-        WidgetbookTheme(
-          name: 'Light',
-          data: AppTheme.light,
-        ),
-      ],
-      devices: [
-        Device(
-          name: 'iPhone 12',
-          resolution: Resolution(
-            nativeSize: DeviceSize(
-              height: 2532.0,
-              width: 1170.0,
-            ),
-            scaleFactor: 3.0,
+      addons: [
+        FrameAddon(
+          setting: FrameSetting.firstAsSelected(
+            frames: [
+              deviceFrameBuilder,
+              NoFrame(),
+              activeFrameBuilder,
+            ],
           ),
-          type: DeviceType.mobile,
+        ),
+        TextScaleAddon(
+          setting: TextScaleSetting.firstAsSelected(
+            textScales: [1, 2],
+          ),
+        ),
+        CustomThemeAddon<ThemeData>(
+          setting: CustomThemeSetting.firstAsSelected(
+            themes: [
+              WidgetbookTheme(data: AppTheme.light, name: 'light theme'),
+              WidgetbookTheme(data: AppTheme.dark, name: 'dark theme'),
+              WidgetbookTheme(data: ThemeData.light(), name: 'default light'),
+              WidgetbookTheme(data: ThemeData.dark(), name: 'default dark'),
+            ],
+          ),
         ),
       ],
-      frames: [
-        WidgetbookFrame(
-          name: 'Widgetbook',
-          allowsDevices: true,
-        ),
-      ],
-      scaffoldBuilder: (context, frame, child) {
-        return Scaffold(
-          body: Center(child: child),
+      appBuilder: (context, child) {
+        final frameBuilder = context.frameBuilder;
+        final theme = context.theme<ThemeData>();
+        return Theme(
+          data: theme!,
+          child: frameBuilder!(
+            context,
+            Scaffold(body: Center(child: child)),
+          ),
         );
       },
-      categories: [
+      directories: [
         WidgetbookCategory(
-          name: 'UI',
-          folders: [
-            WidgetbookFolder(
-              name: 'widgets',
-              widgets: [],
-              folders: [
-                WidgetbookFolder(
-                  name: 'items',
-                  widgets: [
-                    WidgetbookComponent(
-                      name: 'ListItem',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default List Item',
-                          builder: (context) => ListItem(
-                            titleLabel: "test",
-                          ),
-                        ),
-                      ],
+          name: 'Components',
+          children: [
+            WidgetbookComponent(
+              name: 'List Items',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default List Item',
+                  builder: (context) => ListItem(
+                    titleLabel: context.knobs.text(label: 'Title', initialValue: 'Title'),
+                    leading: Icon(
+                      context.knobs.options(
+                        label: 'Leading',
+                        options: [Icons.add, Icons.crop_square_sharp, Icons.circle],
+                      ),
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
