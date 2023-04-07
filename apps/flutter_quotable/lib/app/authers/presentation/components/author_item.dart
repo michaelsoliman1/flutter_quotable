@@ -15,7 +15,7 @@ class AuthorItem extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
-        padding: const EdgeInsets.all(Paddings.inner),
+        padding: const EdgeInsets.all(Spacing.padding),
         child: Row(
           children: [
             Expanded(

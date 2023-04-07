@@ -15,7 +15,7 @@ class QuoteItem extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: Corners.outerRadius),
       child: Padding(
-        padding: const EdgeInsets.all(Paddings.inner),
+        padding: const EdgeInsets.all(Spacing.padding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

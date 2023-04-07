@@ -1,3 +1,4 @@
+import 'package:app_ui/src/constants/ui_constants.dart';
 import 'package:flutter/material.dart';
 
 class ListItem extends StatelessWidget {
@@ -35,7 +36,7 @@ class ListItem extends StatelessWidget {
           color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(8),
         ),
-        padding: padding ?? const EdgeInsets.all(15),
+        padding: padding ?? Spacing.paddingAll,
         child: Row(
           children: [
             leading ?? const SizedBox.shrink(),

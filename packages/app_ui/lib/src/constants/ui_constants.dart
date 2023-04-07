@@ -1,19 +1,19 @@
 import 'package:flutter/widgets.dart';
 
-class Paddings {
-  Paddings._();
+class Spacing {
+  Spacing._();
 
-  /// Inner padding
-  static const innerAll = EdgeInsets.all(inner);
+  /// Shortcut for EdgeInsets.all([padding])
+  static const paddingAll = EdgeInsets.all(padding);
 
-  /// Inner padding
-  static const outerAll = EdgeInsets.all(outer);
+  /// Shortcut for EdgeInsets.all([margin])
+  static const marginAll = EdgeInsets.all(margin);
 
-  /// Inner padding value
-  static const inner = 16.0;
+  /// padding value
+  static const padding = 16.0;
 
-  /// Outer padding
-  static const outer = 24.0;
+  /// margin value
+  static const margin = 24.0;
 }
 
 class Corners {

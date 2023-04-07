@@ -40,7 +40,7 @@ class PagedListView<T> extends StatelessWidget {
         scrollDirection: scrollDirection,
         shrinkWrap: shrinkWrap,
         pagingController: pagingController,
-        padding: padding ?? const EdgeInsets.all(Paddings.outer),
+        padding: padding ?? const EdgeInsets.all(Spacing.margin),
         separatorBuilder: (_, __) => const SizedBox(height: 10),
         builderDelegate: p.PagedChildBuilderDelegate<T>(
           itemBuilder: itemBuilder,

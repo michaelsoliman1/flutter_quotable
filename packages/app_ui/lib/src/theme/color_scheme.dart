@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AppColorScheme {
   static final lightColorScheme = ColorScheme.fromSeed(
     seedColor: seed,
+    surface: const Color(0xFFEBF6F2),
   );
 
   static final darkColorScheme = ColorScheme.fromSeed(
