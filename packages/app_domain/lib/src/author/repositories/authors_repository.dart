@@ -3,7 +3,7 @@ import 'package:app_domain/src/author/entities/entities.dart';
 
 abstract class AuthorsRepository {
   Future<Either<Failure, Page<Author>>> authors({
-    required int page,
+    required int pageIndex,
     int limit = 20,
   });
 }

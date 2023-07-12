@@ -3,7 +3,7 @@ import 'package:app_domain/src/quote/entities/entities.dart';
 
 abstract class QuotesRepository {
   Future<Either<Failure, Page<Quote>>> quotes({
-    required int page,
+    required int pageIndex,
     int limit = 20,
   });
 

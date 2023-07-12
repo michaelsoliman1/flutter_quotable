@@ -41,13 +41,13 @@ class DioClient extends HttpService {
   @override
   Future<ServerPageResponse> requestPage(
     String url, {
-    int page = 1,
+    int pageIndex = 1,
     int limit = 20,
     Map<String, dynamic>? queryParameters,
   }) {
     final params = <String, dynamic>{}..addAll(queryParameters ?? {});
     if (!params.containsKey('page')) {
-      params.addAll({'page': page});
+      params.addAll({'page': pageIndex});
     }
     if (!params.containsKey('limit')) {
       params.addAll({'limit': limit});

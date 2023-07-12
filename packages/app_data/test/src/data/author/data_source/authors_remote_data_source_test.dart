@@ -56,7 +56,7 @@ void main() {
           when(mockHttpService.requestPage(any))
               .thenAnswer((_) async => ServerPageResponse.fromJson(authorsPageJson));
 
-          final fetchedAuthors = await authorsRemoteDataSource.fetchAuthors(page: 1);
+          final fetchedAuthors = await authorsRemoteDataSource.fetchAuthors(pageIndex: 1);
 
           verify(mockHttpService.requestPage(AuthorsApis.authors)).called(1);
 
@@ -74,7 +74,7 @@ void main() {
               .thenThrow(const BadRequestException(ServerError()));
 
           expect(
-            () => authorsRemoteDataSource.fetchAuthors(page: 1),
+            () => authorsRemoteDataSource.fetchAuthors(pageIndex: 1),
             throwsA(const BadRequestException(ServerError())),
           );
         },

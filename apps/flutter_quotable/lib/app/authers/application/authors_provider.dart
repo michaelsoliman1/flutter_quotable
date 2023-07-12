@@ -18,6 +18,6 @@ class AuthorsProvider extends PagingProvider<Author> {
   NewPageCallback<Author> get pageRequest => _fetchAuthors;
 
   Future<Either<Failure, Page<Author>>> _fetchAuthors(int pageIndex) async {
-    return _repository.authors(page: pageIndex);
+    return _repository.authors(pageIndex: pageIndex);
   }
 }

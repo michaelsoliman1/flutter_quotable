@@ -11,9 +11,9 @@ class QuotesRepositoryImpl with RepositoryMixin implements QuotesRepository {
   final QuotesRemoteDataSource _remoteDataSource;
 
   @override
-  Future<Either<Failure, Page<Quote>>> quotes({required int page, int limit = 20}) {
+  Future<Either<Failure, Page<Quote>>> quotes({required int pageIndex, int limit = 20}) {
     return request(
-      () => _remoteDataSource.fetchQuotes(page: page, limit: limit),
+      () => _remoteDataSource.fetchQuotes(pageIndex: pageIndex, limit: limit),
     );
   }
 

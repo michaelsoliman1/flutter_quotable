@@ -44,7 +44,7 @@ void main() {
           when(mockHttpService.requestPage(any))
               .thenAnswer((_) async => ServerPageResponse.fromJson(quotesPageJson));
 
-          final fetchedQuotes = await quotesRemoteDataSource.fetchQuotes(page: 1);
+          final fetchedQuotes = await quotesRemoteDataSource.fetchQuotes(pageIndex: 1);
 
           verify(mockHttpService.requestPage(QuotesApis.quotes)).called(1);
 
@@ -62,7 +62,7 @@ void main() {
               .thenThrow(const BadRequestException(ServerError()));
 
           expect(
-            () => quotesRemoteDataSource.fetchQuotes(page: 1),
+            () => quotesRemoteDataSource.fetchQuotes(pageIndex: 1),
             throwsA(const BadRequestException(ServerError())),
           );
         },

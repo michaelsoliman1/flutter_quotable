@@ -6,8 +6,7 @@
 import 'dart:async' as _i4;
 
 import 'package:app_data/src/services/http/http_service.dart' as _i3;
-import 'package:app_data/src/services/http/models/response/server_response.dart'
-    as _i2;
+import 'package:app_data/src/services/http/models/response/server_response.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -21,8 +20,7 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeServerResponse_0 extends _i1.SmartFake
-    implements _i2.ServerResponse {
+class _FakeServerResponse_0 extends _i1.SmartFake implements _i2.ServerResponse {
   _FakeServerResponse_0(
     Object parent,
     Invocation parentInvocation,
@@ -32,8 +30,7 @@ class _FakeServerResponse_0 extends _i1.SmartFake
         );
 }
 
-class _FakeServerPageResponse_1 extends _i1.SmartFake
-    implements _i2.ServerPageResponse {
+class _FakeServerPageResponse_1 extends _i1.SmartFake implements _i2.ServerPageResponse {
   _FakeServerPageResponse_1(
     Object parent,
     Invocation parentInvocation,
@@ -86,7 +83,7 @@ class MockHttpService extends _i1.Mock implements _i3.HttpService {
   @override
   _i4.Future<_i2.ServerPageResponse> requestPage(
     String? url, {
-    int? page = 1,
+    int? pageIndex = 1,
     int? limit = 20,
     Map<String, dynamic>? queryParameters,
   }) =>
@@ -95,19 +92,18 @@ class MockHttpService extends _i1.Mock implements _i3.HttpService {
           #requestPage,
           [url],
           {
-            #page: page,
+            #page: pageIndex,
             #limit: limit,
             #queryParameters: queryParameters,
           },
         ),
-        returnValue:
-            _i4.Future<_i2.ServerPageResponse>.value(_FakeServerPageResponse_1(
+        returnValue: _i4.Future<_i2.ServerPageResponse>.value(_FakeServerPageResponse_1(
           this,
           Invocation.method(
             #requestPage,
             [url],
             {
-              #page: page,
+              #page: pageIndex,
               #limit: limit,
               #queryParameters: queryParameters,
             },

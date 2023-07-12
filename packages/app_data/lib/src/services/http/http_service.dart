@@ -35,13 +35,13 @@ abstract class HttpService {
 
   /// returns [ServerPageResponse] that's parsed from the response body
   ///
-  /// [page] and [limit] parameters is used for pagination
+  /// [pageIndex] and [limit] parameters is used for pagination
   /// shortcut for `{'page': page, 'limit': limit}` that is added to the query params
   ///
   /// throws [ServerException] if a server error occured, [UnknownException] if an unknown error occured
   Future<ServerPageResponse> requestPage(
     String url, {
-    int page = 1,
+    int pageIndex = 1,
     int limit = 20,
     Map<String, dynamic>? queryParameters,
   });

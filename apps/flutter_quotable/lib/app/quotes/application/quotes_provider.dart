@@ -18,6 +18,6 @@ class QuotesProvider extends PagingProvider<Quote> {
   NewPageCallback<Quote> get pageRequest => _fetchQuotes;
 
   Future<Either<Failure, Page<Quote>>> _fetchQuotes(int pageIndex) async {
-    return _repository.quotes(page: pageIndex);
+    return _repository.quotes(pageIndex: pageIndex);
   }
 }

@@ -11,9 +11,9 @@ class AuthorsRepositoryImpl with RepositoryMixin implements AuthorsRepository {
   final AuthorsRemoteDataSource _remoteDataSource;
 
   @override
-  Future<Either<Failure, Page<Author>>> authors({required int page, int limit = 20}) {
+  Future<Either<Failure, Page<Author>>> authors({required int pageIndex, int limit = 20}) {
     return request(
-      () => _remoteDataSource.fetchAuthors(page: page, limit: limit),
+      () => _remoteDataSource.fetchAuthors(pageIndex: pageIndex, limit: limit),
     );
   }
 }

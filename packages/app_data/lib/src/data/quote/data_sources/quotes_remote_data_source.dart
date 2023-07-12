@@ -10,15 +10,15 @@ class QuotesRemoteDataSource {
 
   final HttpService _httpService;
 
-  Future<Page<QuoteModel>> fetchQuotes({required int page, int limit = 20}) async {
+  Future<Page<QuoteModel>> fetchQuotes({required int pageIndex, int limit = 20}) async {
     final response = await _httpService.requestPage(
       QuotesApis.quotes,
-      page: page,
+      pageIndex: pageIndex,
       limit: limit,
     );
     return Page(
       totalCount: response.totalCount,
-      pageIndex: response.page,
+      pageIndex: response.pageIndex,
       totalPages: response.totalPages,
       items: response.results.map(QuoteModel.fromJson).toList(),
     );

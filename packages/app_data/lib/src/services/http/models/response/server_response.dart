@@ -26,7 +26,7 @@ class ServerPageResponse {
   const ServerPageResponse({
     required this.count,
     required this.totalCount,
-    required this.page,
+    required this.pageIndex,
     required this.totalPages,
     required this.lastItemIndex,
     this.results = const [],
@@ -43,7 +43,8 @@ class ServerPageResponse {
   final int totalCount;
 
   /// The current page index
-  final int page;
+  @JsonKey(name: 'page')
+  final int pageIndex;
 
   /// The total number of pages matching this request
   final int totalPages;

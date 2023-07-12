@@ -12,5 +12,5 @@ class Quote extends Equatable {
   final String author;
 
   @override
-  List<Object?> get props => [id, content, author];
+  List<Object?> get props => [id];
 }
