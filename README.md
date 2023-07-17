@@ -118,7 +118,60 @@ class QuotesRemoteDataSource {
 ```
 
 ## Application Layer
+This layer is responsible for the communication between the Presentation Layer and the Data Layer (through the Domain Layer), and it holds most of the ui logic using `riverpod` providers.
+
+Example
+
+in the following snippet, we define a `quotesProvider` (to be consumed in the presentation layer) to fetch quotes through `QuotesRepository.quotes`. 
+
+A couple of things to note
+- this provider acts as a use case, in this example, to fetch quotes
+- It does not depend or know anything about the Data Layer or its implementation details, it communicate through the interface defined in domain layer (see [Dependency Management]((#dependency-management)) for how we manage that)
+
+```dart
+final quotesProvider = Provider((ref) {
+  return QuotesProvider(locator<QuotesRepository>());
+});
+
+/// PagingProvider is class that provides a paging controller and callback to be executed every time we request a new page
+class QuotesProvider extends PagingProvider<Quote> {
+  QuotesProvider(this._repository);
+
+  final QuotesRepository _repository;
+
+  @override
+  NewPageCallback<Quote> get pageRequest => _fetchQuotes;
+
+  Future<Either<Failure, Page<Quote>>> _fetchQuotes(int pageIndex) async {
+    return _repository.quotes(pageIndex: pageIndex);
+  }
+}
+
+```
+
 ## Presentation Layer
+This is top layer that has all the ui code, it consumes providers from the Application Layer. 
+
+In the following snippet, we define a `QuotesScreen` that consumes the `quotesProvider` we defined earlier the Application Layer and displays list of `QuoteItem`s. 
+```dart
+class QuotesScreen extends ConsumerWidget {
+  const QuotesScreen({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final provider = ref.watch(quotesProvider);
+
+    return Scaffold(
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.quotes)),
+      body: PagedListView<Quote>(
+        pagingController: provider.pagingController,
+        itemBuilder: (context, quote, index) => QuoteItem(qoute: quote),
+      ),
+    );
+  }
+}
+```
+
 # Dependency Management
 For managing our dependencies, we use a [service locator](https://en.wikipedia.org/wiki/Service_locator_pattern) (using [getit](https://pub.dev/packages/get_it))
 
