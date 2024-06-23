@@ -6,16 +6,17 @@ import 'package:flutter_quotable/locator.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 Future<void> bootstrap(Widget Function() builder) async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await locator.setup();
-
   runZonedGuarded<void>(
-    () => runApp(
-      ProviderScope(
-        child: builder(),
-      ),
-    ),
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await locator.setup();
+
+      runApp(
+        ProviderScope(
+          child: builder(),
+        ),
+      );
+    },
     (error, stack) {
       Logger.severe(error, stackTrace: stack);
     },
