@@ -13,7 +13,7 @@ AuthorModel _$AuthorModelFromJson(Map<String, dynamic> json) => AuthorModel(
       link: json['link'] as String,
       name: json['name'] as String,
       slug: json['slug'] as String,
-      quoteCount: json['quoteCount'] as int,
+      quoteCount: (json['quoteCount'] as num).toInt(),
     );
 
 Map<String, dynamic> _$AuthorModelToJson(AuthorModel instance) =>
