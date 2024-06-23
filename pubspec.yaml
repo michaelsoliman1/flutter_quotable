@@ -1,0 +1,7 @@
+name: flutter_quotable_workspace
+
+environment:
+  sdk: ">=3.1.4 <4.0.0"
+
+dev_dependencies:
+  melos: ^3.4.0

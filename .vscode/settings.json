@@ -3,15 +3,16 @@
     "dart.runPubGetOnPubspecChanges": "never",
     "dart.lineLength": 105,
     "editor.codeActionsOnSave": {
-        "quickfix.add.required": true,
-        "quickfix.add.required.multi": true,
-        "quickfix.create.constructorForFinalFields": true,
-        "quickfix.remove.unusedImport": true,
-        "quickfix.remove.unusedImport.multi": true,
-        "quickfix.organize.imports": true,
-        "quickfix.convert.toSuperParameters": true,
-        "quickfix.convert.quotes": true,
-        "quickfix.convert.toPackageImport": true,
-        "quickfix.add.const": true
-    }
+        "quickfix.add.required": "explicit",
+        "quickfix.add.required.multi": "explicit",
+        "quickfix.create.constructorForFinalFields": "explicit",
+        "quickfix.remove.unusedImport": "explicit",
+        "quickfix.remove.unusedImport.multi": "explicit",
+        "quickfix.organize.imports": "explicit",
+        "quickfix.convert.toSuperParameters": "explicit",
+        "quickfix.convert.quotes": "explicit",
+        "quickfix.convert.toPackageImport": "explicit",
+        "quickfix.add.const": "explicit"
+    },
+    "dart.flutterSdkPath": "~/Dev/Flutter/flutter/flutter_3.10.6"
 }
